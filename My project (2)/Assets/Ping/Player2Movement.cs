@@ -21,6 +21,10 @@ public class Player2Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ball == null)
+        {
+            return;
+        }
         if (isAI)
         {
             AIControl();
@@ -29,6 +33,7 @@ public class Player2Movement : MonoBehaviour
         {
             Player2Control();
         }
+    
     }
 
     private void Player2Control()

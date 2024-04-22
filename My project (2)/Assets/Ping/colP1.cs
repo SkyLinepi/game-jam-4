@@ -11,53 +11,49 @@ public class colP1 : MonoBehaviour
     private float elaptime = 0;
     private bool goal1;
     private bool goal2;
-
-    public gameObject ball;
+    public GameObject reference;
+    public bool ballin;
+    public GameObject ball;
 
     void Start()
     {
         
     }
     
-        
-        void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (this.gameObject.tag == "colP1" && col.gameObject.tag == "ball")
         {
             Debug.Log("Detect colP1");
             setscore.GetScoreP2 = true;
-            //Resetball();
-            //goal1 = true;
             GameObject.Destroy(col.gameObject);
-
+            elaptime = countdown; // Reset the countdown timer
+            ballin = true;
         }
         if (this.gameObject.tag == "colP2" && col.gameObject.tag == "ball")
         {
             Debug.Log("Detect colP2");
             setscore.GetScoreP1 = true;
-            //Resetball();
-            //goal2 = true;
             GameObject.Destroy(col.gameObject);
+            elaptime = countdown; // Reset the countdown timer
+            ballin = true;
         }
     }
 
-
-
-    void update()
+    void Update()
     {
-        if (countdown >= 0)
+        if (elaptime > 0 && ballin)
         {
-            elaptime -= Time.deltaTime;
+            Debug.Log("sky");
+            elaptime -= Time.deltaTime; // Decrease the countdown timer
         }
-        else
+        else if(ballin)
         {
-            rb.velocity = new Vector2(0, 0);
-
-            if (goal1)
-            {
-                rb.velocity = new Vector2(0, 0);
-            }
+            Debug.Log("spawn");
+            Instantiate(ball, reference.transform.position, Quaternion.identity);
+            elaptime = countdown; // Reset the countdown timer for the next ball
+            ballin = false;
         }
-
     }
 }
+
