@@ -44,15 +44,15 @@ public class SetScore : MonoBehaviour
         if (GetScoreP1)
         {
             scoreP1 += 1;
-            Debug.Log("Player 1 Score: " + scoreP1);
             GetScoreP1 = false;
+            Debug.Log("Player 1 Score: " + scoreP1);
         }
 
         if (GetScoreP2)
         {
             scoreP2 += 1;
-            Debug.Log("Player 2 Score: " + scoreP2);
             GetScoreP2 = false;
+            Debug.Log("Player 2 Score: " + scoreP2);
         }
 
         //------------------------------------------------
