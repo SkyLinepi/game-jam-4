@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using TMPro;
 
 public class SetScore : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class SetScore : MonoBehaviour
     public bool Player2Win = false;
 
     [Header("GameObject")]
-    public bool ballIsVisible;
+    public bool ballIsMoving;
+
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI ScoreText;
 
     void Start()
     {
@@ -35,6 +39,8 @@ public class SetScore : MonoBehaviour
 
     void SettingScore()
     {
+        ScoreText.text = string.Format("{0:0} : {1:0}", scoreP1, scoreP2);
+
         if (GetScoreP1)
         {
             scoreP1 += 1;
@@ -55,6 +61,7 @@ public class SetScore : MonoBehaviour
         {
             Player1Win = true;
             scoreP1 = 7;
+            ballIsMoving = false;
             Debug.Log("Player 1 Victory");
         }
 
@@ -62,6 +69,7 @@ public class SetScore : MonoBehaviour
         {
             Player2Win = true;
             scoreP2 = 7;
+            ballIsMoving = false;
             Debug.Log("Player 2 Victory");
         }
 
