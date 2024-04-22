@@ -399,8 +399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d767841d8e5e454cb0f3d14cd060a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
-  isAI: 1
+  movementSpeed: 5
+  boostSpeed: 10
+  isAI: 0
   ball: {fileID: 1708399031}
 --- !u!1 &257386773
 GameObject:
@@ -886,10 +887,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1014428887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d767841d8e5e454cb0f3d14cd060a6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bd6ed3352c998245aa6f66a396e703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 7
+  boostSpeed: 0
   isAI: 1
   ball: {fileID: 1708399031}
 --- !u!1 &1179685517

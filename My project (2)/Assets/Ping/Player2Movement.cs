@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private float boostSpeed;
@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject ball;
 
     private Rigidbody2D rb;
-    private Vector2 playerMove;
+    private Vector2 player2Move;
 
 
     void Start()
@@ -27,41 +27,40 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Player1Control();
+            Player2Control();
         }
     }
 
-    private void Player1Control()
+    private void Player2Control()
     {
-        float horizontalInput = 0f;
+        float horizontal2Input = 0f;
         float currentMovementSpeed = movementSpeed;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            horizontalInput = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            horizontalInput = 1f;
-        }
-        
 
-        playerMove = new Vector2(horizontalInput, 0);
-    }  
-    
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            horizontal2Input = 1f;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            horizontal2Input = -1f;
+        }
+        player2Move = new Vector2(horizontal2Input, 0); 
+    }
+
     private void AIControl()
     {
         if (ball.transform.position.x > transform.position.x + 0.5f)
         {
-            playerMove = new Vector2(1, 0);
+            player2Move = new Vector2(1, 0);
         }
         else if (ball.transform.position.x < transform.position.x - 0.5f)
         {
-            playerMove = new Vector2(-1, 0);
+            player2Move = new Vector2(-1, 0);
         }
         else
         {
-            playerMove = Vector2.zero;
+            player2Move = Vector2.zero;
         }
     }
 
@@ -70,11 +69,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.velocity = playerMove * boostSpeed;
+            rb.velocity = player2Move * boostSpeed;
 
 
         }
         else
-        rb.velocity = playerMove * movementSpeed;
+            rb.velocity = player2Move * movementSpeed;
     }
 }
+
