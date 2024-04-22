@@ -6,6 +6,7 @@ TagManager:
   tags:
   - colP1
   - colP2
+  - ball
   layers:
   - Default
   - TransparentFX

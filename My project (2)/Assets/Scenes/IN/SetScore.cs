@@ -7,8 +7,8 @@ using TMPro;
 public class SetScore : MonoBehaviour
 {
     [Header("Setting Score")]
-    public int scoreP1;
-    public int scoreP2;
+    public static int scoreP1;
+    public static int scoreP2;
 
     public bool GetScoreP1 = false;
     public bool GetScoreP2 = false;
