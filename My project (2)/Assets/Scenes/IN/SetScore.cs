@@ -7,8 +7,8 @@ using TMPro;
 public class SetScore : MonoBehaviour
 {
     [Header("Setting Score")]
-    [SerializeField] private int scoreP1;
-    [SerializeField] private int scoreP2;
+    public int scoreP1;
+    public int scoreP2;
 
     public bool GetScoreP1 = false;
     public bool GetScoreP2 = false;
@@ -21,7 +21,8 @@ public class SetScore : MonoBehaviour
     public bool ballIsMoving;
 
     [Header("Text")]
-    [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] TextMeshProUGUI ScoreText1;
+    [SerializeField] TextMeshProUGUI ScoreText2;
 
     void Start()
     {
@@ -39,20 +40,19 @@ public class SetScore : MonoBehaviour
 
     void SettingScore()
     {
-        ScoreText.text = string.Format("{0:0} : {1:0}", scoreP1, scoreP2);
-
+        ScoreText1.text = scoreP1.ToString();
+        ScoreText2.text = scoreP2.ToString();
+        
         if (GetScoreP1)
         {
             scoreP1 += 1;
             GetScoreP1 = false;
-            Debug.Log("Player 1 Score: " + scoreP1);
         }
 
         if (GetScoreP2)
         {
             scoreP2 += 1;
             GetScoreP2 = false;
-            Debug.Log("Player 2 Score: " + scoreP2);
         }
 
         //------------------------------------------------
@@ -72,6 +72,5 @@ public class SetScore : MonoBehaviour
             ballIsMoving = false;
             Debug.Log("Player 2 Victory");
         }
-
     }
 }

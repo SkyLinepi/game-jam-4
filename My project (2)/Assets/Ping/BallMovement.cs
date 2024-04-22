@@ -7,8 +7,9 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float initialSpeed = 10;
     [SerializeField] private float speedIncrease = 0.25f;
-    [SerializeField] private Text playerScore;
-    [SerializeField] private Text AIScore;
+    public SetScore setscore;
+    //[SerializeField] private Text playerScore;
+    //[SerializeField] private Text AIScore;
 
     private int hitCounter;
     private Rigidbody2D rb;
@@ -17,14 +18,16 @@ public class BallMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("StartBall", 2f);
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, initialSpeed + (speedIncrease + hitCounter));
+        if(setscore.scoreP1 >= 7 || setscore.scoreP2 >= 7)
+        {
+            gameObject.SetActive(false);
+        }
     }
     private void StartBall()
     {
@@ -74,8 +77,23 @@ public class BallMovement : MonoBehaviour
             PlayerBounce(collision.transform);
         }
     }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "colP2")
+        {
+            setscore.GetScoreP1 = true;
+            Resetball();
+        }
 
-    private void OnTriggerEnter2D(Collision2D collision)
+        if (col.gameObject.tag == "colP1")
+        {
+            setscore.GetScoreP2 = true;
+            Resetball();
+        }
+    }
+    
+/*
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (transform.position.x > 0)
         {
@@ -88,4 +106,5 @@ public class BallMovement : MonoBehaviour
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
         }
     }
+    */
 }
