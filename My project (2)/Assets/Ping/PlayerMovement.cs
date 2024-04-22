@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float boostSpeed;
     [SerializeField] private bool isAI;
     [SerializeField] private GameObject ball;
+    [SerializeField]     [Range(0f, 180f)]     float MaxBallAngle;
+
 
     private Rigidbody2D rb;
     private Vector2 playerMove;
@@ -76,5 +78,25 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         rb.velocity = playerMove * movementSpeed;
+    }
+
+    void OnCollisionEnter2D(Collision2D ballin)
+    {
+        if(ballin.gameObject.tag == "ball")
+        {
+
+        
+         Vector2 ballPos = ballin.transform.position;
+        Vector2 playerPos = transform.position;
+
+        float BPDis = ballPos.x - playerPos.x; //Ball - Player Distance
+        float BPRatio = BPDis / (this.transform.localScale.x / 2);
+        float DirX = (BPRatio * MaxBallAngle) / 180f;
+
+        Vector2 DirToApply = new(DirX, 1 - Mathf.Abs(DirX));
+        DirToApply = DirToApply.normalized;
+        BallMovement ballz = ballin.gameObject.GetComponent<BallMovement>();
+        ballz.SetDirection(DirToApply);
+        }
     }
 }

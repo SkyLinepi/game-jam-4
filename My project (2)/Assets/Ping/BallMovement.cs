@@ -18,13 +18,20 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(rb.velocity.magnitude);
     }
 
     private void Launch()
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        rb.velocity = new Vector2(speed * x, speed * y);
+        Vector2 dirs = new Vector2(x, y);
+        dirs = dirs.normalized;
+        rb.velocity = dirs * speed;
+    }
+
+    public void SetDirection(Vector2 dir)
+    {
+        rb.velocity = dir * speed;
     }
 }

@@ -456,6 +456,7 @@ MonoBehaviour:
   boostSpeed: 10
   isAI: 0
   ball: {fileID: 1708399031}
+  MaxBallAngle: 130
 --- !u!1 &257386773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1216,7 @@ MonoBehaviour:
   boostSpeed: 0
   isAI: 1
   ball: {fileID: 1708399031}
+  MaxBallAngle: 130
 --- !u!1 &1179685517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,10 +1890,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2628892785715686722, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_Name
       value: Basic Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6825780733483355919, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c44b1d080928b0247b522df2d1de8855, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
