@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerMove;
 
-    public bool isskill2 = false;
 
 
 
@@ -48,11 +47,6 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             horizontalInput = 1f;
-        }
-
-        if (isskill2)
-        {
-            horizontalInput = -horizontalInput;
         }
 
         playerMove = new Vector2(horizontalInput, 0);

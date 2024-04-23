@@ -9,11 +9,13 @@ public class Skill2 : MonoBehaviour
     public float skillDuration = 4f;
     private float skillTimer = 0f;
 
-    public PlayerMovement PM;
+    public Player2 PM;
+    public GameObject target;
 
     void Start()
     {
-        PM = GetComponent<PlayerMovement>();
+        PM = target.GetComponent<Player2>();
+
     }
 
     void Update()

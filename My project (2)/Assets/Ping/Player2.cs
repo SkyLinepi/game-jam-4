@@ -13,6 +13,9 @@ public class Player2 : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerMove;
 
+    public bool isskill2 = false;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +39,11 @@ public class Player2 : MonoBehaviour
         {
             horizontalInput = 1f;
         }
+        if (isskill2)
+        {
+            horizontalInput = -horizontalInput;
+        }
+
         playerMove = new Vector2(horizontalInput, 0);
 
     }

@@ -294,10 +294,11 @@ GameObject:
   - component: {fileID: 178091159}
   - component: {fileID: 178091162}
   - component: {fileID: 178091163}
+  - component: {fileID: 178091166}
   - component: {fileID: 178091164}
   - component: {fileID: 178091165}
   m_Layer: 0
-  m_Name: AI
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +460,6 @@ MonoBehaviour:
   isAI: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
-  isskill2: 0
 --- !u!114 &178091164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,8 +473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 4
-  skillDuration: 1
-  PM: {fileID: 178091163}
+  skillDuration: 2
+  PM: {fileID: 1014428892}
+  target: {fileID: 1014428887}
 --- !u!114 &178091165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,8 +490,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 2
   skillDuration: 10
-  Cam1: {fileID: 1028201540}
+  Cam1: {fileID: 790230199}
   RotationSpeed: 10
+--- !u!114 &178091166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178091158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c235b32fb6cec42a022a17b3c1cbd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 2
+  skillDuration: 10
+  FakeBall: {fileID: 5957711441813201215, guid: d0fbbc10d4e32124a86512b32b2241bf, type: 3}
+  FakeLocation: {fileID: 1264203352}
 --- !u!1 &257386773
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +520,7 @@ GameObject:
   - component: {fileID: 257386774}
   - component: {fileID: 257386776}
   m_Layer: 0
-  m_Name: Basic Background (1)
+  m_Name: Basic Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +722,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 87
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1121,7 +1138,7 @@ GameObject:
   - component: {fileID: 1014428891}
   - component: {fileID: 1014428892}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,6 +1300,7 @@ MonoBehaviour:
   isAI: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
+  isskill2: 0
 --- !u!1 &1028201540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,7 +1698,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 87
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1963,7 +1981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000690909547560364, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2000690909547560364, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1975,7 +1993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000690909547560364, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000690909547560364, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1987,22 +2005,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000690909547560364, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2628892785715686722, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
-      propertyPath: m_Material
-      value: 
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
       propertyPath: m_Name
       value: Basic Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 6825780733483355919, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c44b1d080928b0247b522df2d1de8855, type: 2}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

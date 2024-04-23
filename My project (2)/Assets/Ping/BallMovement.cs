@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
+    [SerializeField] LayerMask ballLayer;
+
     public float speed;
     public Rigidbody2D rb;
+
 
 
     // Start is called before the first frame update
@@ -30,6 +33,8 @@ public class BallMovement : MonoBehaviour
             Launch();
             Debug.Log("first");
         }
+
+        Physics2D.IgnoreLayerCollision(6, 6, true);
     }
 
 
