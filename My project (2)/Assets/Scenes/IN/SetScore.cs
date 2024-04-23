@@ -24,6 +24,9 @@ public class SetScore : MonoBehaviour
     [SerializeField] TextMeshProUGUI ScoreText1;
     [SerializeField] TextMeshProUGUI ScoreText2;
 
+    public static int score1Previous;
+    public static int score2Previous;
+
     void Start()
     {
         Debug.Log("Start Program");

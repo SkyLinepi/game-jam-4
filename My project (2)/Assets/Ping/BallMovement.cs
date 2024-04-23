@@ -5,15 +5,33 @@ using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
-    
     public float speed;
     public Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Launch();
+        if (SetScore.score1Previous != SetScore.scoreP1)
+        {
+            Debug.Log("12");
+            SetDirectiond2();
+            SetScore.score1Previous++;
+        }
+        else if (SetScore.score2Previous != SetScore.scoreP2)
+        {
+            Debug.Log("21");
+            SetDirectiond1();
+
+            SetScore.score2Previous++;
+        }
+        else
+        {
+            Launch();
+            Debug.Log("first");
+        }
     }
+
 
     // Update is called once per frame
     void Update()
@@ -30,8 +48,21 @@ public class BallMovement : MonoBehaviour
         rb.velocity = dirs * speed;
     }
 
+    public void SetDirectiond1()
+    {
+        Vector2 dir = new Vector2(0, -1);
+        rb.velocity = dir * speed;
+    }
+
+    public void SetDirectiond2()
+    {
+        Vector2 dir = new Vector2(0, 1);
+        rb.velocity = dir * speed;
+    }
+
     public void SetDirection(Vector2 dir)
     {
         rb.velocity = dir * speed;
     }
 }
+

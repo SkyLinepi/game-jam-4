@@ -65,7 +65,7 @@ public class Player2 : MonoBehaviour
             float BPRatio = BPDis / (this.transform.localScale.x / 2);
             float DirX = (BPRatio * MaxBallAngle) / 180f;
 
-            Vector2 DirToApply = new(DirX, 1 - Mathf.Abs(DirX));
+            Vector2 DirToApply = new(DirX, -(1 - Mathf.Abs(DirX)));
             DirToApply = DirToApply.normalized;
             BallMovement ballz = ballin.gameObject.GetComponent<BallMovement>();
             ballz.SetDirection(DirToApply);

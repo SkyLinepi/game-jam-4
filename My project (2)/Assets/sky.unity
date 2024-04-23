@@ -458,7 +458,7 @@ MonoBehaviour:
   boostSpeed: 10
   isAI: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
-  MaxBallAngle: 130
+  MaxBallAngle: 90
   isskill2: 0
 --- !u!114 &178091164
 MonoBehaviour:
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   boostSpeed: 10
   isAI: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
-  MaxBallAngle: 130
+  MaxBallAngle: 90
 --- !u!1 &1028201540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,9 +1512,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setscore: {fileID: 13343454}
+  goal1: 0
+  goal2: 0
   reference: {fileID: 1264203352}
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
+  first: 0
 --- !u!1 &1393737705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,9 +1609,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setscore: {fileID: 13343454}
+  goal1: 0
+  goal2: 0
   reference: {fileID: 1264203352}
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
+  first: 0
 --- !u!1 &1725087700
 GameObject:
   m_ObjectHideFlags: 0

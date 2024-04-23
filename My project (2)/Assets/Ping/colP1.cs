@@ -9,11 +9,18 @@ public class colP1 : MonoBehaviour
 
     private float countdown = 2;
     private float elaptime = 0;
-    private bool goal1;
-    private bool goal2;
+    public bool goal1;
+    public bool goal2;
     public GameObject reference;
     public bool ballin;
     public GameObject ball;
+
+    public bool first;
+
+    void Awake()
+    {
+        first = true;
+    }
 
     void Start()
     {
@@ -29,14 +36,16 @@ public class colP1 : MonoBehaviour
             GameObject.Destroy(col.gameObject);
             elaptime = countdown; // Reset the countdown timer
             ballin = true;
+            goal1 = true;
         }
-        if (this.gameObject.tag == "colP2" && col.gameObject.tag == "ball")
+        else if (this.gameObject.tag == "colP2" && col.gameObject.tag == "ball")
         {
             Debug.Log("Detect colP2");
             setscore.GetScoreP1 = true;
             GameObject.Destroy(col.gameObject);
             elaptime = countdown; // Reset the countdown timer
             ballin = true;
+            goal2 = true;
         }
     }
 
@@ -54,6 +63,7 @@ public class colP1 : MonoBehaviour
             elaptime = countdown; // Reset the countdown timer for the next ball
             ballin = false;
         }
+
     }
 }
 
