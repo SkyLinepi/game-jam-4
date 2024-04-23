@@ -11,10 +11,17 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private GameObject FakeBall;
     [SerializeField] private GameObject FakeLocation;
     private Vector2 FakeSpawn;
-
+    public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
 
     private bool isskill1 = false;
 
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -29,6 +36,8 @@ public class Skill1 : MonoBehaviour
             
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
+            EffectSetactive.SetActive(true);
+            audioSource.PlayOneShot(VoiceOver);
         }
 
         if (skillTimer > 0 && isskill1)
@@ -48,7 +57,6 @@ public class Skill1 : MonoBehaviour
         Debug.Log("Skill1");
         Debug.Log("Fake Ball skill1");
         Instantiate(FakeBall, FakeSpawn, Quaternion.identity);
-
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -57,13 +65,8 @@ public class Skill1 : MonoBehaviour
         if (skillTimer > 0)
         {
             ActivateSkill();
+            EffectSetactive.SetActive(false);
         }
         isskill1 = false;
     }
-
-
-
-
-
-
 }

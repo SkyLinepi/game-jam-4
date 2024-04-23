@@ -12,6 +12,15 @@ public class Skill3 : MonoBehaviour
     [SerializeField] private float RotationSpeed = 0;
 
    private bool isskill3 = false;
+   public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
+    private bool yoyoyo;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
 
 
@@ -27,17 +36,24 @@ public class Skill3 : MonoBehaviour
             isskill3 = true;
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
+            yoyoyo = true;
         }
 
         if (skillTimer > 0 && isskill3)
         {
             ActivateSkill();
             skillTimer -= Time.deltaTime;
+            
         }
         else if (isskill3)
         {
             isskill3 = false;
             Cam1.transform.rotation = Quaternion.identity;
+            EffectSetactive.SetActive(false);
+        }
+        if(yoyoyo){
+            audioSource.PlayOneShot(VoiceOver);
+            yoyoyo = false;
         }
         
     }
@@ -45,7 +61,9 @@ public class Skill3 : MonoBehaviour
 
     public void ActivateSkill()
     {
+        
         Debug.Log("Skill3");
         Cam1.transform.Rotate(new Vector3(0, 0, RotationSpeed) * Time.deltaTime);
+        EffectSetactive.SetActive(true);
     }
 }

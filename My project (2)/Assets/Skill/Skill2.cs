@@ -8,13 +8,16 @@ public class Skill2 : MonoBehaviour
     private float cooldownTimer = 0f;
     public float skillDuration = 4f;
     private float skillTimer = 0f;
-
+    public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
     public Player2 PM;
     public GameObject target;
 
     void Start()
     {
         PM = target.GetComponent<Player2>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -28,6 +31,7 @@ public class Skill2 : MonoBehaviour
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateSkill();
+            EffectSetactive.SetActive(true);
         }
 
         if (skillTimer > 0 && PM.isskill2)
@@ -38,6 +42,7 @@ public class Skill2 : MonoBehaviour
         {
             skillTimer = 0;
             PM.isskill2 = false;
+            EffectSetactive.SetActive(false);
         }
     }
     
@@ -48,5 +53,7 @@ public class Skill2 : MonoBehaviour
         skillTimer = skillDuration;
         PM.isskill2 = true;
         cooldownTimer = cooldownTime; // Start cooldown timer
+        audioSource.Stop();
+        audioSource.PlayOneShot(VoiceOver);
     }
 }
