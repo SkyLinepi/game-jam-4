@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField]     [Range(0f, 180f)]     float MaxBallAngle;
 
+    private float currentVelocity = 0f;
+    public float accelerationRate = 5f;
+    public float decelerationRate = 5f;
+
+    public static bool isDebuffed;
 
     private Rigidbody2D rb;
     private Vector2 playerMove;
@@ -28,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
         if (isAI)
         {
             AIControl();
+        }
+        if(isDebuffed)
+        {
+            DebuffPlayer1Control();
         }
         else
         {
@@ -68,6 +77,38 @@ public class PlayerMovement : MonoBehaviour
             playerMove = Vector2.zero;
         }
     }
+
+    private void DebuffPlayer1Control()
+    
+    {
+        float horizontalInput = 0f;
+        if (Input.GetKey(KeyCode.A))
+        {
+        horizontalInput = -1f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+        horizontalInput = 1f;
+        }
+        float acceleration = horizontalInput * accelerationRate * Time.deltaTime;
+        currentVelocity += acceleration;
+        currentVelocity = Mathf.Clamp(currentVelocity, -movementSpeed, movementSpeed);
+    if (horizontalInput == 0f)
+    {
+        float deceleration = Mathf.Sign(currentVelocity) * decelerationRate * Time.deltaTime;
+        if (Mathf.Abs(deceleration) > Mathf.Abs(currentVelocity))
+        {
+            currentVelocity = 0f;
+        }
+        else
+        {
+            currentVelocity -= deceleration;
+        }
+    }
+
+    // Update player movement vector
+    playerMove = new Vector2(currentVelocity, 0);
+}
 
 
     private void FixedUpdate()

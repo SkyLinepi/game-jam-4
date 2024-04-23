@@ -25,7 +25,7 @@ public class Skill2 : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
         }
 
-        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
+        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateSkill();
         }

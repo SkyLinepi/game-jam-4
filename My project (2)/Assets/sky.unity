@@ -460,6 +460,8 @@ MonoBehaviour:
   isAI: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
+  accelerationRate: 5
+  decelerationRate: 5
 --- !u!114 &178091164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,6 +1139,7 @@ GameObject:
   - component: {fileID: 1014428888}
   - component: {fileID: 1014428891}
   - component: {fileID: 1014428892}
+  - component: {fileID: 1014428893}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1301,6 +1304,21 @@ MonoBehaviour:
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
   isskill2: 0
+--- !u!114 &1014428893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014428887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70179b3181494d7428942ee99a6bc7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOnCooldown: 0
+  cooldownDuration: 20
+  cooldownTimer: 0
 --- !u!1 &1028201540
 GameObject:
   m_ObjectHideFlags: 0

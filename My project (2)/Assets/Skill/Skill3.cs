@@ -22,7 +22,7 @@ public class Skill3 : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
         }
 
-        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.P))
+        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha3))
         {
             isskill3 = true;
             skillTimer = skillDuration;
