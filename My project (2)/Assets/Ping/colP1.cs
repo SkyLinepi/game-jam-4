@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class colP1 : MonoBehaviour
 {
+    public Skill1Player2 skill1player2;
     public SetScore setscore;
     private Rigidbody2D rb;
 
@@ -53,17 +53,15 @@ public class colP1 : MonoBehaviour
     {
         if (elaptime > 0 && ballin)
         {
-            Debug.Log("sky");
             elaptime -= Time.deltaTime; // Decrease the countdown timer
         }
         else if(ballin)
         {
-            Debug.Log("spawn");
-            Instantiate(ball, reference.transform.position, Quaternion.identity);
+            GameObject SpawnBall = Instantiate(ball, reference.transform.position, Quaternion.identity);
+            skill1player2.StartFollow(SpawnBall.transform);
             elaptime = countdown; // Reset the countdown timer for the next ball
             ballin = false;
         }
-
     }
 }
 

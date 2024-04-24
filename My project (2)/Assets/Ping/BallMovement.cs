@@ -17,21 +17,17 @@ public class BallMovement : MonoBehaviour
     {
         if (SetScore.score1Previous != SetScore.scoreP1)
         {
-            Debug.Log("12");
             SetDirectiond2();
             SetScore.score1Previous++;
         }
         else if (SetScore.score2Previous != SetScore.scoreP2)
         {
-            Debug.Log("21");
             SetDirectiond1();
-
             SetScore.score2Previous++;
         }
         else
         {
             Launch();
-            Debug.Log("first");
         }
 
         Physics2D.IgnoreLayerCollision(6, 6, true);
@@ -41,7 +37,7 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rb.velocity.magnitude);
+
     }
 
     private void Launch()
