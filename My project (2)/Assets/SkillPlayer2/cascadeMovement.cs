@@ -8,7 +8,7 @@ public class cascadeMovement : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(new Vector2(-Speed, 0) * Time.deltaTime);
+        transform.Translate(new Vector2(0, Speed) * Time.deltaTime , Space.Self);
         return;
     }
 }
