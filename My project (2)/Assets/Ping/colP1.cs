@@ -47,6 +47,8 @@ public class colP1 : MonoBehaviour
             ballin = true;
             goal2 = true;
         }
+
+        first = false;
     }
 
     void Update()
