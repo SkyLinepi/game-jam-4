@@ -31,7 +31,7 @@ public class Skill2Player2 : MonoBehaviour
             cascade.active = false;
         }
 
-        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.I))
+        if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
         {
             ActivateSkill();    
         }

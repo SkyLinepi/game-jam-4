@@ -50,9 +50,9 @@ public class Skill1Player2 : MonoBehaviour
             SpawnTarget.position += OffsetY * WallOffset;
         }
 
-        if(CanUseSkill1 && Input.GetKeyDown(KeyCode.M))
+        if(CanUseSkill1 && Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("Press M");
+            Debug.Log("Press I");
             WallSpawn();
             CanUseSkill1 = false;
             cooldownTimer = cooldownTime;
