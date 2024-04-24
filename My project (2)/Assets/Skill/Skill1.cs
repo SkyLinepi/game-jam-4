@@ -5,9 +5,9 @@ using UnityEngine;
 public class Skill1 : MonoBehaviour
 {
     public float cooldownTime = 1f;
-    private float cooldownTimer = 0f;
+    [SerializeField] private float cooldownTimer = 0f;
     public float skillDuration = 4f;
-    private float skillTimer = 0f;
+    [SerializeField] private float skillTimer = 0f;
     [SerializeField] private GameObject FakeBall;
     [SerializeField] private GameObject FakeLocation;
     private Vector2 FakeSpawn;
@@ -15,7 +15,7 @@ public class Skill1 : MonoBehaviour
     public GameObject EffectSetactive;
     private AudioSource audioSource;
 
-    private bool isskill1 = false;
+    [SerializeField] private bool isskill1 = false;
 
 
     void Start()
@@ -62,7 +62,7 @@ public class Skill1 : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         FakeSpawn = col.transform.position;
-        if (skillTimer > 0)
+        if (skillTimer > 0 && isskill1)
         {
             ActivateSkill();
             EffectSetactive.SetActive(false);
