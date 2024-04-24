@@ -11,6 +11,15 @@ public class Skill3Player2 : MonoBehaviour
     private float debuffDuration = 10f; // Debuff duration in seconds
     private float debuffTimer = 0f;
 
+    public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         // Update debuff timer if the player is debuffed
@@ -20,6 +29,7 @@ public class Skill3Player2 : MonoBehaviour
             if (debuffTimer <= 0)
             {
                 PlayerMovement.isDebuffed = false; // Reset the debuff status
+                EffectSetactive.SetActive(false);
             }
         }
 
@@ -27,6 +37,8 @@ public class Skill3Player2 : MonoBehaviour
         if (!isOnCooldown && Input.GetKeyDown(KeyCode.P))
         {
             ActivateSkill();
+            EffectSetactive.SetActive(true);
+            audioSource.PlayOneShot(VoiceOver);
         }
 
         // Update cooldown timer if the skill is on cooldown
