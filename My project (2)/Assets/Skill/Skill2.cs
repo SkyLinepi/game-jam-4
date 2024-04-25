@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill2 : MonoBehaviour
 {
@@ -14,10 +15,14 @@ public class Skill2 : MonoBehaviour
     public Player2 PM;
     public GameObject target;
 
+    [SerializeField] private Image SkillBox;
+    [SerializeField] private Animator SkillAni;
+
     void Start()
     {
         PM = target.GetComponent<Player2>();
         audioSource = GetComponent<AudioSource>();
+        SkillAni.SetBool("isCooldown", false);
 
     }
 
@@ -26,6 +31,13 @@ public class Skill2 : MonoBehaviour
         if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
+            SkillBox.color = Color.gray;
+            SkillAni.SetBool("isCooldown", true);
+        }
+        else if (cooldownTimer <= 0)
+        {
+            SkillBox.color = Color.white;
+            SkillAni.SetBool("isCooldown", false);
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha2))

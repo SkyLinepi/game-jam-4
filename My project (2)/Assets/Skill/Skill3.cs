@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill3 : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class Skill3 : MonoBehaviour
     [SerializeField] private GameObject Cam;
     [SerializeField] private float RotationSpeed = 0;
 
-   private bool isskill3 = false;
+    [SerializeField] private Image SkillBox;
+    [SerializeField] private Animator SkillAni;
+
+    private bool isskill3 = false;
    public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
@@ -26,6 +30,7 @@ public class Skill3 : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         Cam.GetComponent<Camera>().fieldOfView = 43.1f;
+        SkillAni.SetBool("isCooldown", false);
     }
 
 
@@ -35,6 +40,13 @@ public class Skill3 : MonoBehaviour
         if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
+            SkillBox.color = Color.gray;
+            SkillAni.SetBool("isCooldown", true);
+        }
+        else if (cooldownTimer <= 0)
+        {
+            SkillBox.color = Color.white;
+            SkillAni.SetBool("isCooldown", false);
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha3))
