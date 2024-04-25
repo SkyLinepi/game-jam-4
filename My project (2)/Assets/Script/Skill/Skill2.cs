@@ -14,6 +14,8 @@ public class Skill2 : MonoBehaviour
     private AudioSource audioSource;
     public Player2 PM;
     public GameObject target;
+    public GameObject ParticleS2P1;
+    public GameObject QuestionMark;
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
@@ -24,7 +26,7 @@ public class Skill2 : MonoBehaviour
         PM = target.GetComponent<Player2>();
         audioSource = GetComponent<AudioSource>();
         SkillAni.SetBool("isCooldown", false);
-
+        
     }
 
     void Update()
@@ -41,6 +43,9 @@ public class Skill2 : MonoBehaviour
             SkillBox.color = Color.white;
             SkillAni.SetBool("isCooldown", false);
             SkillIcon.color = Color.white;
+            ParticleS2P1.active = false;
+            ParticleS2P1.transform.position = transform.position = new Vector3(0,-10,0);
+            QuestionMark.active = false;
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha2))
@@ -70,5 +75,7 @@ public class Skill2 : MonoBehaviour
         cooldownTimer = cooldownTime; // Start cooldown timer
         audioSource.Stop();
         audioSource.PlayOneShot(VoiceOver);
+        ParticleS2P1.active = true;
+        QuestionMark.active = true;
     }
 }
