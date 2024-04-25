@@ -583,6 +583,8 @@ MonoBehaviour:
   Campivot: {fileID: 790230199}
   Cam: {fileID: 1725087700}
   RotationSpeed: 60
+  SkillBox: {fileID: 1182220455}
+  SkillAni: {fileID: 1182220457}
   VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
