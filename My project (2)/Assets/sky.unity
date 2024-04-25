@@ -566,6 +566,7 @@ MonoBehaviour:
   target: {fileID: 1014428887}
   SkillBox: {fileID: 718094127}
   SkillAni: {fileID: 718094129}
+  SkillIcon: {fileID: 1367723542}
 --- !u!114 &178091165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,6 +586,7 @@ MonoBehaviour:
   RotationSpeed: 60
   SkillBox: {fileID: 1182220455}
   SkillAni: {fileID: 1182220457}
+  SkillIcon: {fileID: 1941997416}
   VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
@@ -611,6 +613,7 @@ MonoBehaviour:
   EffectSetactive: {fileID: 1029671939}
   SkillBox: {fileID: 370094889}
   SkillAni: {fileID: 370094891}
+  SkillIcon: {fileID: 1339630743}
   isskill1: 0
 --- !u!82 &178091167
 AudioSource:

@@ -18,6 +18,7 @@ public class Skill1 : MonoBehaviour
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
+    [SerializeField] private Image SkillIcon;
 
     [SerializeField] private bool isskill1 = false;
 
@@ -35,11 +36,13 @@ public class Skill1 : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
             SkillBox.color = Color.gray;
             SkillAni.SetBool("isCooldown",true);
+            SkillIcon.color = Color.gray;
         }
         else if(cooldownTimer <= 0)
         {
             SkillBox.color = Color.white;
             SkillAni.SetBool("isCooldown", false);
+            SkillIcon.color = Color.white;
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha1))
