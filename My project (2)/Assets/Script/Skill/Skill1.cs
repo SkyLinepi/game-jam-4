@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,12 +13,13 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private GameObject FakeBall;
     [SerializeField] private GameObject FakeLocation;
     private Vector2 FakeSpawn;
-    public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
+    [SerializeField] private AudioClip VoiceOver;
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
+    [SerializeField] private Image SkillIcon;
 
     [SerializeField] private bool isskill1 = false;
 
@@ -35,11 +37,13 @@ public class Skill1 : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
             SkillBox.color = Color.gray;
             SkillAni.SetBool("isCooldown",true);
+            SkillIcon.color = Color.gray;
         }
         else if(cooldownTimer <= 0)
         {
             SkillBox.color = Color.white;
             SkillAni.SetBool("isCooldown", false);
+            SkillIcon.color = Color.white;
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha1))
