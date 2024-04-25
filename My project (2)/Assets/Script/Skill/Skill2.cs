@@ -26,7 +26,6 @@ public class Skill2 : MonoBehaviour
         PM = target.GetComponent<Player2>();
         audioSource = GetComponent<AudioSource>();
         SkillAni.SetBool("isCooldown", false);
-        
     }
 
     void Update()
@@ -44,7 +43,7 @@ public class Skill2 : MonoBehaviour
             SkillAni.SetBool("isCooldown", false);
             SkillIcon.color = Color.white;
             ParticleS2P1.active = false;
-            ParticleS2P1.transform.position = transform.position = new Vector3(0,-10,0);
+            ParticleS2P1.transform.position= new Vector3(0,-10,0);
             QuestionMark.active = false;
         }
 

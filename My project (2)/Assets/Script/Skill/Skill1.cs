@@ -22,6 +22,7 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private Image SkillIcon;
 
     [SerializeField] private bool isskill1 = false;
+    public GameObject particleS1P1;
 
 
     void Start()
@@ -44,6 +45,7 @@ public class Skill1 : MonoBehaviour
             SkillBox.color = Color.white;
             SkillAni.SetBool("isCooldown", false);
             SkillIcon.color = Color.white;
+            particleS1P1.active = false;
         }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha1))
@@ -73,6 +75,7 @@ public class Skill1 : MonoBehaviour
         Debug.Log("Skill1");
         Debug.Log("Fake Ball skill1");
         Instantiate(FakeBall, FakeSpawn, Quaternion.identity);
+        particleS1P1.active = true;
     }
 
     void OnCollisionEnter2D(Collision2D col)
