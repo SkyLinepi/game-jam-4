@@ -560,12 +560,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 12
   skillDuration: 4
-  VoiceOver: {fileID: 8300000, guid: ce1f0f1676c030b4ea81ef51f6ebfc78, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 05a5e87c3ea26324c88611a639923417, type: 3}
   EffectSetactive: {fileID: 1507054726}
   PM: {fileID: 1014428892}
   target: {fileID: 1014428887}
   SkillBox: {fileID: 718094127}
   SkillAni: {fileID: 718094129}
+  SkillIcon: {fileID: 1367723542}
 --- !u!114 &178091165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +586,8 @@ MonoBehaviour:
   RotationSpeed: 60
   SkillBox: {fileID: 1182220455}
   SkillAni: {fileID: 1182220457}
-  VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
+  SkillIcon: {fileID: 1941997416}
+  VoiceOver: {fileID: 8300000, guid: 7dde8ef1d3df68544bdced6b5d039f32, type: 3}
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
   MaxFOV: 63.5
@@ -607,10 +609,11 @@ MonoBehaviour:
   skillTimer: 0
   FakeBall: {fileID: 5957711441813201215, guid: d0fbbc10d4e32124a86512b32b2241bf, type: 3}
   FakeLocation: {fileID: 1264203352}
-  VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
   EffectSetactive: {fileID: 1029671939}
+  VoiceOver: {fileID: 8300000, guid: 32deecf0190d9d54e9de6cee600f8c9d, type: 3}
   SkillBox: {fileID: 370094889}
   SkillAni: {fileID: 370094891}
+  SkillIcon: {fileID: 1339630743}
   isskill1: 0
 --- !u!82 &178091167
 AudioSource:
@@ -6739,6 +6742,7 @@ GameObject:
   - component: {fileID: 1014428894}
   - component: {fileID: 1014428893}
   - component: {fileID: 1014428895}
+  - component: {fileID: 1014428896}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -6918,7 +6922,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cooldownDuration: 20
   cooldownTimer: 0
-  VoiceOver: {fileID: 0}
+  VoiceOver: {fileID: 8300000, guid: d8e585fefac858049a2df462ea4edeb7, type: 3}
   EffectSetactive: {fileID: 2001063390}
 --- !u!114 &1014428894
 MonoBehaviour:
@@ -6935,6 +6939,8 @@ MonoBehaviour:
   cooldownTime: 5
   cascade: {fileID: 630071366}
   Destination: {x: 0, y: -1}
+  VoiceOver: {fileID: 8300000, guid: bb9c7d0ec3a410543b8560346d408751, type: 3}
+  EffectSetactive: {fileID: 0}
 --- !u!114 &1014428895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6956,6 +6962,104 @@ MonoBehaviour:
   WallOffset: 1
   cooldownTime: 2
   CanUseSkill1: 1
+  VoiceOver: {fileID: 8300000, guid: 5e7e677898079954aa4f37e410134321, type: 3}
+  EffectSetactive: {fileID: 0}
+--- !u!82 &1014428896
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014428887}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1028201540
 GameObject:
   m_ObjectHideFlags: 0
