@@ -18,6 +18,10 @@ public class Skill1Player2 : MonoBehaviour
     [SerializeField] private float cooldownTime = 5f;
     [SerializeField] private bool CanUseSkill1 = true;
 
+    public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
+
 
     void Start()
     {
@@ -56,6 +60,7 @@ public class Skill1Player2 : MonoBehaviour
             WallSpawn();
             CanUseSkill1 = false;
             cooldownTimer = cooldownTime;
+            audioSource.PlayOneShot(VoiceOver);
         }
     }
     void Timer()

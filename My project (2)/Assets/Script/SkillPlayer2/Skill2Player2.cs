@@ -13,9 +13,13 @@ public class Skill2Player2 : MonoBehaviour
     [SerializeField] private Vector2 Destination;
     private float Distance;
 
+    public AudioClip VoiceOver;
+    public GameObject EffectSetactive;
+    private AudioSource audioSource;
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,7 +37,8 @@ public class Skill2Player2 : MonoBehaviour
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
         {
-            ActivateSkill();    
+            ActivateSkill();
+            audioSource.PlayOneShot(VoiceOver);    
         }
 
         Debug.Log("Distance =" + Distance);
