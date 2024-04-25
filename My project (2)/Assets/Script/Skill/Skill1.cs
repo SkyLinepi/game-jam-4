@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +13,9 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private GameObject FakeBall;
     [SerializeField] private GameObject FakeLocation;
     private Vector2 FakeSpawn;
-    public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
+    [SerializeField] private AudioClip VoiceOver;
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
