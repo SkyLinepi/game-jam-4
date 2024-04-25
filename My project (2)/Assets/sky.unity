@@ -560,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 4
   skillDuration: 2
-  VoiceOver: {fileID: 8300000, guid: ce1f0f1676c030b4ea81ef51f6ebfc78, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 05a5e87c3ea26324c88611a639923417, type: 3}
   EffectSetactive: {fileID: 1507054726}
   PM: {fileID: 1014428892}
   target: {fileID: 1014428887}
@@ -587,7 +587,7 @@ MonoBehaviour:
   SkillBox: {fileID: 1182220455}
   SkillAni: {fileID: 1182220457}
   SkillIcon: {fileID: 1941997416}
-  VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
+  VoiceOver: {fileID: 8300000, guid: e759661ddf1746f499c76ff6a91cb057, type: 3}
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
   MaxFOV: 63.5
@@ -609,8 +609,8 @@ MonoBehaviour:
   skillTimer: 0
   FakeBall: {fileID: 5957711441813201215, guid: d0fbbc10d4e32124a86512b32b2241bf, type: 3}
   FakeLocation: {fileID: 1264203352}
-  VoiceOver: {fileID: 8300000, guid: af7f36e335cec7b4ba3c5648aac01838, type: 3}
   EffectSetactive: {fileID: 1029671939}
+  VoiceOver: {fileID: 8300000, guid: caf6a7fccfe92ed4da24467c39e35f82, type: 3}
   SkillBox: {fileID: 370094889}
   SkillAni: {fileID: 370094891}
   SkillIcon: {fileID: 1339630743}
@@ -6934,7 +6934,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cooldownDuration: 20
   cooldownTimer: 0
-  VoiceOver: {fileID: 0}
+  VoiceOver: {fileID: 8300000, guid: db11e738c278d25439376a58d855098a, type: 3}
   EffectSetactive: {fileID: 2001063390}
 --- !u!114 &1014428894
 MonoBehaviour:
