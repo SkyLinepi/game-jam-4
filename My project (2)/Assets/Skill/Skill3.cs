@@ -56,7 +56,7 @@ public class Skill3 : MonoBehaviour
             isskill3 = false;
             Campivot.transform.rotation = Quaternion.identity;
             EffectSetactive.SetActive(false);
-            t = 0f;
+            Cam.GetComponent<Camera>().fieldOfView = 41.3f;
         }
         if(yoyoyo)
         {
