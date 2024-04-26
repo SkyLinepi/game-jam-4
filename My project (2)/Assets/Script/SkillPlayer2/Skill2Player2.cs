@@ -35,7 +35,6 @@ public class Skill2Player2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
-        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -86,6 +85,7 @@ public class Skill2Player2 : MonoBehaviour
             ActivateSkill();
             StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
+            Cutscenes.SetActive(true);
         }
 
         Debug.Log("Distance =" + Distance);

@@ -41,7 +41,6 @@ public class Skill3 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
-        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -87,6 +86,7 @@ public class Skill3 : MonoBehaviour
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
             yoyoyo = true;
+            Cutscenes.SetActive(true);
         }
 
         if (skillTimer > 0 && isskill3)

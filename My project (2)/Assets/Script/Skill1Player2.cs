@@ -47,7 +47,6 @@ public class Skill1Player2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
-        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -105,6 +104,7 @@ public class Skill1Player2 : MonoBehaviour
             cooldownTimer = cooldownTime;
             audioSource.PlayOneShot(VoiceOver);
             StartCoroutine(CutSceneTimer());
+            Cutscenes.SetActive(true);
         }
     }
     void Timer()

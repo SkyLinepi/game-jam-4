@@ -36,7 +36,6 @@ public class Skill2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
-        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -84,6 +83,7 @@ public class Skill2 : MonoBehaviour
         {
             ActivateSkill();
             StartCoroutine(CutSceneTimer());
+            Cutscenes.SetActive(true);
         }
 
         if (skillTimer > 0 && PM.isskill2)

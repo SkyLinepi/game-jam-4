@@ -32,7 +32,6 @@ public class Skill3Player2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
-        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -71,6 +70,7 @@ public class Skill3Player2 : MonoBehaviour
             ActivateSkill();
             StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
+            Cutscenes.SetActive(true);
         }
 
         // Update cooldown timer if the skill is on cooldown
