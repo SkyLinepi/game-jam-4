@@ -8569,7 +8569,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
-  AniM: {fileID: 0}
+  AniM: {fileID: 1864283837}
 --- !u!1 &1328850851
 GameObject:
   m_ObjectHideFlags: 0
@@ -8893,7 +8893,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
-  AniM: {fileID: 0}
+  AniM: {fileID: 1864283837}
 --- !u!1001 &1442105686
 PrefabInstance:
   m_ObjectHideFlags: 0

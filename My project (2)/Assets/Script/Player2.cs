@@ -44,6 +44,7 @@ public class Player2 : MonoBehaviour
 
     void Pause()
     {
+        playerMove = Vector2.zero;
         isPausing = true;
     }
 
