@@ -10,7 +10,14 @@ public class BallMovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
 
+    private AniManager AniM;
 
+    private Vector2 CurretVel;
+
+    private void Awake()
+    {
+        AniM = FindAnyObjectByType<AniManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +40,27 @@ public class BallMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 6, true);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
 
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+
+    void Pause()
+    {
+        CurretVel = this.rb.velocity;
+        rb.velocity = Vector2.zero;
+    }
+
+    void Unpause()
+    {
+        rb.velocity = CurretVel;
     }
 
     private void Launch()
@@ -65,5 +88,6 @@ public class BallMovement : MonoBehaviour
     {
         rb.velocity = dir * speed;
     }
+
 }
 

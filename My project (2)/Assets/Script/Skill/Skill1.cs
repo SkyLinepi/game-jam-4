@@ -21,9 +21,12 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private Animator SkillAni;
     [SerializeField] private Image SkillIcon;
 
+    bool IsPausing = false;
+
     [SerializeField] private bool isskill1 = false;
     public GameObject particleS1P1;
 
+    [SerializeField] AniManager AniM;
 
     void Start()
     {
@@ -31,8 +34,32 @@ public class Skill1 : MonoBehaviour
         SkillAni.SetBool("isCooldown", false);
     }
 
+    void Pause()
+    {
+        IsPausing = true;
+    }
+
+    void Unpause()
+    {
+        EffectSetactive.SetActive(true);
+        IsPausing = false;
+    }
+
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+
     void Update()
     {
+        
+
+        if (IsPausing)
+        {
+            return;
+        }
+
         if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
@@ -50,11 +77,11 @@ public class Skill1 : MonoBehaviour
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha1))
         {
+            StartCoroutine(CutSceneTimer());
             isskill1 = true;
             
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
-            EffectSetactive.SetActive(true);
             audioSource.PlayOneShot(VoiceOver);
         }
 
@@ -68,6 +95,11 @@ public class Skill1 : MonoBehaviour
         {
             isskill1 = false;
         }
+    }
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
     }
 
     public void ActivateSkill()
@@ -87,5 +119,12 @@ public class Skill1 : MonoBehaviour
             EffectSetactive.SetActive(false);
         }
         isskill1 = false;
+    }
+
+    IEnumerator CutSceneTimer()
+    {
+        AniM.AniPlay();
+        yield return new WaitForSeconds(3);
+        AniM.AniFin();
     }
 }
