@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SetScore : MonoBehaviour
 {
     [Header("Setting Score")]
     public static int scoreP1;
     public static int scoreP2;
+
 
     public bool GetScoreP1 = false;
     public bool GetScoreP2 = false;
@@ -26,6 +28,9 @@ public class SetScore : MonoBehaviour
 
     public static int score1Previous;
     public static int score2Previous;
+
+    public string scenePlayer1Win;
+    public string scenePlayer2Win;
 
     void Start()
     {
@@ -66,6 +71,7 @@ public class SetScore : MonoBehaviour
             scoreP1 = 7;
             ballIsMoving = false;
             Debug.Log("Player 1 Victory");
+            player1win();
         }
 
         if (scoreP2 >= 7)
@@ -74,6 +80,17 @@ public class SetScore : MonoBehaviour
             scoreP2 = 7;
             ballIsMoving = false;
             Debug.Log("Player 2 Victory");
+            player2win();
         }
+    }
+
+    public void player2win()
+    {
+        SceneManager.LoadScene(scenePlayer2Win);
+    }
+
+    public void player1win()
+    {
+        SceneManager.LoadScene(scenePlayer1Win);
     }
 }
