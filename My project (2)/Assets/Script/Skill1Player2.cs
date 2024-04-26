@@ -32,17 +32,42 @@ public class Skill1Player2 : MonoBehaviour
 
     [SerializeField] float AvaiableSkillArea;
 
+    [SerializeField] AniManager AniM;
+    bool IsPausing = false;
 
+    private GameObject SpawnedWall;
     void Start()
     {
         CanUseSkill1 = true;
         audioSource = GetComponent<AudioSource>();
         SkillAni.SetBool("isCooldown", false);
     }
+    void Pause()
+    {
+        IsPausing = true;
+    }
 
-    
+    void Unpause()
+    {
+        IsPausing = false;
+        EffectSetactive.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+
     void Update()
     {
+        if (IsPausing)
+            return;
         Timer();
         if(BallPosition == null)
         {
@@ -72,10 +97,10 @@ public class Skill1Player2 : MonoBehaviour
         if(CanUseSkill1 && Input.GetKeyDown(KeyCode.I) && InArea)
         {
             Debug.Log("Press I");
-            WallSpawn();
             CanUseSkill1 = false;
             cooldownTimer = cooldownTime;
             audioSource.PlayOneShot(VoiceOver);
+            StartCoroutine(CutSceneTimer());
         }
     }
     void Timer()
@@ -97,8 +122,9 @@ public class Skill1Player2 : MonoBehaviour
         }
     }
 
-    void WallSpawn()
+    IEnumerator WallSpawn()
     {
+        yield return null;
         Debug.Log("WallSpawn");
         GameObject SpawnedWall = Instantiate(Wall, SpawnTarget.position, QuaternionCal());
         Destroy(SpawnedWall, WallDuration);
@@ -127,5 +153,12 @@ public class Skill1Player2 : MonoBehaviour
         float AngleInRad = Mathf.Atan2(Dir.y, Dir.x);
         Quaternion RotationToApply = Quaternion.Euler(0,0,AngleInRad * Mathf.Rad2Deg);
         return RotationToApply;
+    }
+    IEnumerator CutSceneTimer()
+    {
+        AniM.AniPlay();
+        yield return new WaitForSeconds(3);
+        AniM.AniFin();
+        StartCoroutine(WallSpawn());
     }
 }

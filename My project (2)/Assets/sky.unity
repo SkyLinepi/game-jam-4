@@ -634,6 +634,7 @@ MonoBehaviour:
   MaxBallAngle: 90
   accelerationRate: 5
   decelerationRate: 5
+  AniM: {fileID: 1864283837}
 --- !u!114 &178091164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +658,7 @@ MonoBehaviour:
   SkillBox: {fileID: 718094127}
   SkillAni: {fileID: 718094129}
   SkillIcon: {fileID: 1367723542}
+  AniM: {fileID: 1864283837}
 --- !u!114 &178091165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +683,7 @@ MonoBehaviour:
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
   MaxFOV: 63.5
+  AniM: {fileID: 1864283837}
 --- !u!114 &178091166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,6 +1884,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581206497}
   m_CullTransparentMesh: 1
+--- !u!1 &592780087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592780088}
+  m_Layer: 0
+  m_Name: Temporaly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &592780088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592780087}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.49999988, y: 0.49999988, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014428890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &617890431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7948,12 +7982,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014428887}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1449836927}
+  - {fileID: 592780088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!50 &1014428891
@@ -8001,6 +8036,7 @@ MonoBehaviour:
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
   isskill2: 0
+  AniM: {fileID: 1864283837}
 --- !u!114 &1014428893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8021,6 +8057,7 @@ MonoBehaviour:
   SkillBox: {fileID: 996123662}
   SkillIcon: {fileID: 1024175822}
   SkillAni: {fileID: 996123661}
+  AniM: {fileID: 1864283837}
 --- !u!114 &1014428894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8037,10 +8074,11 @@ MonoBehaviour:
   cascade: {fileID: 630071366}
   Destination: {x: 0, y: -1}
   VoiceOver: {fileID: 8300000, guid: bb9c7d0ec3a410543b8560346d408751, type: 3}
-  EffectSetactive: {fileID: 0}
+  EffectSetactive: {fileID: 592780087}
   SkillBox: {fileID: 1618112712}
   SkillIcon: {fileID: 918659750}
   SkillAni: {fileID: 1618112711}
+  AniM: {fileID: 1864283837}
 --- !u!114 &1014428895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8066,9 +8104,10 @@ MonoBehaviour:
   SkillIcon: {fileID: 543411765}
   SkillAni: {fileID: 518667278}
   VoiceOver: {fileID: 8300000, guid: 330998c97604b4143812d8ee2433402e, type: 3}
-  EffectSetactive: {fileID: 0}
+  EffectSetactive: {fileID: 592780087}
   Player2: {fileID: 1014428890}
   AvaiableSkillArea: 10
+  AniM: {fileID: 1864283837}
 --- !u!82 &1014428896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8530,6 +8569,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
+  AniM: {fileID: 1864283837}
 --- !u!1 &1328850851
 GameObject:
   m_ObjectHideFlags: 0
@@ -8853,6 +8893,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
+  AniM: {fileID: 1864283837}
 --- !u!1001 &1442105686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13924,11 +13965,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 39e98656b074e1d4e9d4520b8dcfd8ab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fb6db7f74aa5bf544b6c4ad8049d2798, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.016
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

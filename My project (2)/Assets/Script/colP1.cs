@@ -17,18 +17,40 @@ public class colP1 : MonoBehaviour
 
     public bool first;
 
+    [SerializeField] AniManager AniM;
+    bool isPausing = false;
+
     void Awake()
     {
         first = true;
     }
 
-    void Start()
+    private void OnEnable()
     {
-        
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
     }
-    
+
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+
+    void Pause()
+    {
+        isPausing = true;
+    }
+
+    void Unpause()
+    {
+        isPausing = false;
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (isPausing)
+            return;
         if (this.gameObject.tag == "colP1" && col.gameObject.tag == "ball")
         {
             Debug.Log("Detect colP1");
@@ -53,6 +75,8 @@ public class colP1 : MonoBehaviour
 
     void Update()
     {
+        if (isPausing)
+            return;
         if (elaptime > 0 && ballin)
         {
             elaptime -= Time.deltaTime; // Decrease the countdown timer

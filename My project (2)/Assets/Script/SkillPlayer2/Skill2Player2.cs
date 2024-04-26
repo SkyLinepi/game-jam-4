@@ -22,11 +22,35 @@ public class Skill2Player2 : MonoBehaviour
     [SerializeField] Image SkillIcon;
     [SerializeField] private Animator SkillAni;
 
+    [SerializeField] AniManager AniM;
+    bool IsPausing = false;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    void Pause()
+    {
+        IsPausing = true;
+    }
+
+    void Unpause()
+    {
+        IsPausing = false;
+        EffectSetactive.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
     void Update()
     {
         Distance = -(Destination.y - cascade.transform.position.y);
@@ -56,6 +80,7 @@ public class Skill2Player2 : MonoBehaviour
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
         {
             ActivateSkill();
+            StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
         }
 
@@ -70,5 +95,11 @@ public class Skill2Player2 : MonoBehaviour
         cascade.transform.position = transform.position;
 
         cooldownTimer = cooldownTime; // Start cooldown timer
+    }
+    IEnumerator CutSceneTimer()
+    {
+        AniM.AniPlay();
+        yield return new WaitForSeconds(3);
+        AniM.AniFin();
     }
 }

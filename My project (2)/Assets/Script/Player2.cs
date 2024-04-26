@@ -15,6 +15,9 @@ public class Player2 : MonoBehaviour
 
     public bool isskill2 = false;
 
+    bool isPausing = false;
+
+    [SerializeField] private AniManager AniM;
 
     void Start()
     {
@@ -23,7 +26,31 @@ public class Player2 : MonoBehaviour
 
     void Update()
     {
+        if (isPausing)
+            return;
             Player1Control();
+    }
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+
+    void Pause()
+    {
+        playerMove = Vector2.zero;
+        isPausing = true;
+    }
+
+    void Unpause()
+    {
+        isPausing = false;
     }
 
     private void Player1Control()
