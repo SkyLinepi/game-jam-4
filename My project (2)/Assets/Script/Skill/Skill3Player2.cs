@@ -20,9 +20,36 @@ public class Skill3Player2 : MonoBehaviour
     [SerializeField] Image SkillIcon;
     [SerializeField] private Animator SkillAni;
 
+    [SerializeField] AniManager AniM;
+    bool IsPausing = false;
+
+    public GameObject Cutscenes;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+    void Pause()
+    {
+        IsPausing = true;
+        Cutscenes.SetActive(true);
+    }
+
+    void Unpause()
+    {
+        IsPausing = false;
+        Cutscenes.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
     }
 
     void Update()
@@ -42,7 +69,7 @@ public class Skill3Player2 : MonoBehaviour
         if (!isOnCooldown && Input.GetKeyDown(KeyCode.P))
         {
             ActivateSkill();
-            EffectSetactive.SetActive(true);
+            StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
         }
 
@@ -69,5 +96,12 @@ public class Skill3Player2 : MonoBehaviour
         debuffTimer = debuffDuration; // Start the debuff timer
         isOnCooldown = true;
         cooldownTimer = cooldownDuration; // Start the cooldown timer
+    }
+    IEnumerator CutSceneTimer()
+    {
+        AniM.AniPlay();
+        yield return new WaitForSeconds(3);
+        AniM.AniFin();
+        EffectSetactive.SetActive(true);
     }
 }

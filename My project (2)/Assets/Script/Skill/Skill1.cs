@@ -16,10 +16,13 @@ public class Skill1 : MonoBehaviour
     public GameObject EffectSetactive;
     private AudioSource audioSource;
     [SerializeField] private AudioClip VoiceOver;
+    [SerializeField] private AudioClip Spawn;
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
     [SerializeField] private Image SkillIcon;
+
+    public GameObject Cutscenes;
 
     bool IsPausing = false;
 
@@ -37,12 +40,14 @@ public class Skill1 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
+        Cutscenes.SetActive(true);
     }
 
     void Unpause()
     {
         EffectSetactive.SetActive(true);
         IsPausing = false;
+        Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
@@ -107,6 +112,7 @@ public class Skill1 : MonoBehaviour
         Debug.Log("Skill1");
         Debug.Log("Fake Ball skill1");
         Instantiate(FakeBall, FakeSpawn, Quaternion.identity);
+        audioSource.PlayOneShot(Spawn);
         particleS1P1.active = true;
     }
 
