@@ -6099,6 +6099,8 @@ MonoBehaviour:
   EffectSetactive: {fileID: 0}
   Player2: {fileID: 559656063}
   AvaiableSkillArea: 10
+  AniM: {fileID: 0}
+  Cutscenes: {fileID: 0}
 --- !u!114 &559656057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,6 +6121,8 @@ MonoBehaviour:
   SkillBox: {fileID: 457339952}
   SkillIcon: {fileID: 1384861033}
   SkillAni: {fileID: 457339951}
+  AniM: {fileID: 0}
+  Cutscenes: {fileID: 0}
 --- !u!114 &559656058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,6 +6143,8 @@ MonoBehaviour:
   SkillBox: {fileID: 1086655665}
   SkillIcon: {fileID: 2059343947}
   SkillAni: {fileID: 1086655664}
+  AniM: {fileID: 0}
+  Cutscenes: {fileID: 0}
 --- !u!114 &559656059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6157,6 +6163,7 @@ MonoBehaviour:
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   MaxBallAngle: 90
   isskill2: 0
+  AniM: {fileID: 0}
 --- !u!50 &559656060
 Rigidbody2D:
   serializedVersion: 4
@@ -6335,6 +6342,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
+  AniM: {fileID: 0}
 --- !u!61 &703820067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12039,6 +12047,8 @@ MonoBehaviour:
   EffectSetactive: {fileID: 1070146994}
   MinFOV: 41.3
   MaxFOV: 63.5
+  AniM: {fileID: 0}
+  Cutscenes: {fileID: 0}
 --- !u!114 &1133316524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12062,6 +12072,8 @@ MonoBehaviour:
   SkillBox: {fileID: 2105282153}
   SkillAni: {fileID: 2105282152}
   SkillIcon: {fileID: 250974801}
+  AniM: {fileID: 0}
+  Cutscenes: {fileID: 0}
 --- !u!114 &1133316525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12082,9 +12094,11 @@ MonoBehaviour:
   FakeLocation: {fileID: 856774171}
   EffectSetactive: {fileID: 1618356999}
   VoiceOver: {fileID: 8300000, guid: 5bbdd5984af4e6849be530adf60db79b, type: 3}
+  Spawn: {fileID: 0}
   SkillBox: {fileID: 1396608910}
   SkillAni: {fileID: 1396608909}
   SkillIcon: {fileID: 1968793220}
+  Cutscenes: {fileID: 0}
   isskill1: 0
   particleS1P1: {fileID: 1268626332}
   AniM: {fileID: 1351497767}
@@ -12107,6 +12121,7 @@ MonoBehaviour:
   MaxBallAngle: 90
   accelerationRate: 5
   decelerationRate: 5
+  AniM: {fileID: 0}
 --- !u!50 &1133316527
 Rigidbody2D:
   serializedVersion: 4
@@ -12488,6 +12503,7 @@ MonoBehaviour:
   ballin: 0
   ball: {fileID: 5957711441813201215, guid: 50c2e7a82646c9c438335435fcb37795, type: 3}
   first: 0
+  AniM: {fileID: 0}
 --- !u!61 &1307411460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19247,6 +19263,8 @@ MonoBehaviour:
   ballIsMoving: 0
   ScoreText1: {fileID: 1387929929}
   ScoreText2: {fileID: 1969204814}
+  scenePlayer1Win: 
+  scenePlayer2Win: 
 --- !u!4 &2134315294
 Transform:
   m_ObjectHideFlags: 0
@@ -19313,6 +19331,10 @@ PrefabInstance:
     - target: {fileID: 7138766457506995693, guid: 29158cbd64f59c542860d84f3b8204c0, type: 3}
       propertyPath: m_Name
       value: Particle Racket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138766457506995693, guid: 29158cbd64f59c542860d84f3b8204c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
