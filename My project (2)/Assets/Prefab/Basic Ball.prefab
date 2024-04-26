@@ -165,7 +165,7 @@ MonoBehaviour:
   ballLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 10
+  speed: 12.5
   rb: {fileID: 2628892785715686722}
 --- !u!96 &-220586070599533086
 TrailRenderer:

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minXVel: -0.5
   maxXVel: 0.5
-  speed: 10
+  speed: 12.5
 --- !u!114 &-164178466893051006
 MonoBehaviour:
   m_ObjectHideFlags: 0

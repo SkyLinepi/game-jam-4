@@ -655,8 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20b0a26f20df364a8f6f95e322e9100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 4
-  skillDuration: 2
+  cooldownTime: 10
+  skillDuration: 5
   VoiceOver: {fileID: 8300000, guid: 0625a8d3680c32549a5b21731b50fc56, type: 3}
   EffectSetactive: {fileID: 1507054726}
   PM: {fileID: 1014428892}
@@ -680,8 +680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409d97097086157409704ba4a9e283bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 2
-  skillDuration: 13
+  cooldownTime: 25
+  skillDuration: 8
   Campivot: {fileID: 790230199}
   Cam: {fileID: 1725087700}
   RotationSpeed: 60
@@ -8211,7 +8211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnCooldown: 0
-  cooldownDuration: 20
+  cooldownDuration: 22
   cooldownTimer: 0
   VoiceOver: {fileID: 8300000, guid: 84b1d478a3657cd4a9e6804668d6230e, type: 3}
   EffectSetactive: {fileID: 2001063390}
@@ -8236,7 +8236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8cafa86a1865a4d9b0611cde63f54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 1
+  cooldownTime: 13
   cascade: {fileID: 630071366}
   Destination: {x: 0, y: -1}
   VoiceOver: {fileID: 8300000, guid: 9580aab3e1a16044ca9751a34b04bbd3, type: 3}
@@ -8265,7 +8265,7 @@ MonoBehaviour:
   Wall: {fileID: 1206907702735412211, guid: 41165910c64336b44a53984a39d4bea2, type: 3}
   WallDuration: 1
   WallOffset: 1
-  cooldownTime: 2
+  cooldownTime: 10
   CanUseSkill1: 1
   SkillBox: {fileID: 518667279}
   SkillIcon: {fileID: 543411765}
