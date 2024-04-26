@@ -67,7 +67,7 @@ public class Skill2Player2 : MonoBehaviour
     {
         Debug.Log("Skill2_2");
         cascade.active = true;
-        cascade.transform.position = new Vector2(0,9);
+        cascade.transform.position = transform.position;
 
         cooldownTimer = cooldownTime; // Start cooldown timer
     }
