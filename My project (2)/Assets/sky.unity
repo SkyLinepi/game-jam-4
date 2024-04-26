@@ -665,6 +665,7 @@ MonoBehaviour:
   SkillAni: {fileID: 718094129}
   SkillIcon: {fileID: 1367723542}
   AniM: {fileID: 1864283837}
+  Cutscenes: {fileID: 991803848}
 --- !u!114 &178091165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,6 +691,7 @@ MonoBehaviour:
   MinFOV: 41.3
   MaxFOV: 63.5
   AniM: {fileID: 1864283837}
+  Cutscenes: {fileID: 417541689}
 --- !u!114 &178091166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +716,7 @@ MonoBehaviour:
   SkillBox: {fileID: 370094889}
   SkillAni: {fileID: 370094891}
   SkillIcon: {fileID: 1339630743}
+  Cutscenes: {fileID: 2088851912}
   isskill1: 0
   particleS1P1: {fileID: 2003261813}
   AniM: {fileID: 1864283837}
@@ -8527,6 +8530,7 @@ MonoBehaviour:
   SkillIcon: {fileID: 1024175822}
   SkillAni: {fileID: 996123661}
   AniM: {fileID: 1864283837}
+  Cutscenes: {fileID: 775312592}
 --- !u!114 &1014428894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8548,6 +8552,7 @@ MonoBehaviour:
   SkillIcon: {fileID: 918659750}
   SkillAni: {fileID: 1618112711}
   AniM: {fileID: 1864283837}
+  Cutscenes: {fileID: 1226330858}
 --- !u!114 &1014428895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8577,6 +8582,7 @@ MonoBehaviour:
   Player2: {fileID: 1014428890}
   AvaiableSkillArea: 10
   AniM: {fileID: 1864283837}
+  Cutscenes: {fileID: 1723065497}
 --- !u!82 &1014428896
 AudioSource:
   m_ObjectHideFlags: 0

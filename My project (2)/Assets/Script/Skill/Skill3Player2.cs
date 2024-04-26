@@ -23,6 +23,8 @@ public class Skill3Player2 : MonoBehaviour
     [SerializeField] AniManager AniM;
     bool IsPausing = false;
 
+    public GameObject Cutscenes;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -30,11 +32,13 @@ public class Skill3Player2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
+        Cutscenes.SetActive(true);
     }
 
     void Unpause()
     {
         IsPausing = false;
+        Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
