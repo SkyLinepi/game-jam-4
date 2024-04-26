@@ -29,8 +29,8 @@ public class Skill3 : MonoBehaviour
 
     [SerializeField] AniManager AniM;
     bool IsPausing = false;
-    public GameObject Cutscenes;
-
+    public GameObject[] Cutscenes;
+    [SerializeField] private int i;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -47,7 +47,7 @@ public class Skill3 : MonoBehaviour
     {
         IsPausing = false;
         EffectSetactive.SetActive(true);
-        Cutscenes.SetActive(false);
+        Cutscenes[i].SetActive(false);
     }
 
     private void OnEnable()
@@ -81,12 +81,13 @@ public class Skill3 : MonoBehaviour
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha3))
         {
+            i = Random.Range(0, 3);
             StartCoroutine(CutSceneTimer());
             isskill3 = true;
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
             yoyoyo = true;
-            Cutscenes.SetActive(true);
+            Cutscenes[i].SetActive(true);
         }
 
         if (skillTimer > 0 && isskill3)

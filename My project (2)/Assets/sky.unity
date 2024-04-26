@@ -693,7 +693,11 @@ MonoBehaviour:
   MinFOV: 41.3
   MaxFOV: 63.5
   AniM: {fileID: 1864283837}
-  Cutscenes: {fileID: 417541689}
+  Cutscenes:
+  - {fileID: 2088851912}
+  - {fileID: 991803848}
+  - {fileID: 417541689}
+  i: 0
 --- !u!114 &178091166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8215,7 +8219,11 @@ MonoBehaviour:
   SkillIcon: {fileID: 1024175822}
   SkillAni: {fileID: 996123661}
   AniM: {fileID: 1864283837}
-  Cutscenes: {fileID: 775312592}
+  Cutscenes:
+  - {fileID: 1723065497}
+  - {fileID: 1226330858}
+  - {fileID: 775312592}
+  i: 0
 --- !u!114 &1014428894
 MonoBehaviour:
   m_ObjectHideFlags: 0

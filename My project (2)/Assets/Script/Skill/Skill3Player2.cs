@@ -23,7 +23,8 @@ public class Skill3Player2 : MonoBehaviour
     [SerializeField] AniManager AniM;
     bool IsPausing = false;
 
-    public GameObject Cutscenes;
+    public GameObject[] Cutscenes;
+    [SerializeField] private int i;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class Skill3Player2 : MonoBehaviour
     void Unpause()
     {
         IsPausing = false;
-        Cutscenes.SetActive(false);
+        Cutscenes[i].SetActive(false);
     }
 
     private void OnEnable()
@@ -70,7 +71,7 @@ public class Skill3Player2 : MonoBehaviour
             ActivateSkill();
             StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
-            Cutscenes.SetActive(true);
+            Cutscenes[i].SetActive(true);
         }
 
         // Update cooldown timer if the skill is on cooldown
@@ -92,6 +93,7 @@ public class Skill3Player2 : MonoBehaviour
 
     private void ActivateSkill()
     {
+        i = Random.Range(0, 3);
         PlayerMovement.isDebuffed = true;
         debuffTimer = debuffDuration; // Start the debuff timer
         isOnCooldown = true;

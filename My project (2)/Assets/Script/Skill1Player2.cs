@@ -52,8 +52,7 @@ public class Skill1Player2 : MonoBehaviour
     void Unpause()
     {
         IsPausing = false;
-        EffectSetactive.SetActive(true);
-        Cutscenes.SetActive(false);
+        //Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
@@ -103,8 +102,7 @@ public class Skill1Player2 : MonoBehaviour
             CanUseSkill1 = false;
             cooldownTimer = cooldownTime;
             audioSource.PlayOneShot(VoiceOver);
-            StartCoroutine(CutSceneTimer());
-            Cutscenes.SetActive(true);
+            StartCoroutine(WallSpawn());
         }
     }
     void Timer()
@@ -129,6 +127,7 @@ public class Skill1Player2 : MonoBehaviour
     IEnumerator WallSpawn()
     {
         yield return null;
+        EffectSetactive.SetActive(true);
         Debug.Log("WallSpawn");
         GameObject SpawnedWall = Instantiate(Wall, SpawnTarget.position, QuaternionCal());
         Destroy(SpawnedWall, WallDuration);
@@ -163,6 +162,5 @@ public class Skill1Player2 : MonoBehaviour
         AniM.AniPlay();
         yield return new WaitForSeconds(3);
         AniM.AniFin();
-        StartCoroutine(WallSpawn());
     }
 }

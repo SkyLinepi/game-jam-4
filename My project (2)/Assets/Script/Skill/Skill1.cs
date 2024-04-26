@@ -44,9 +44,8 @@ public class Skill1 : MonoBehaviour
 
     void Unpause()
     {
-        EffectSetactive.SetActive(true);
         IsPausing = false;
-        Cutscenes.SetActive(false);
+        //Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
@@ -81,13 +80,12 @@ public class Skill1 : MonoBehaviour
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha1))
         {
-            StartCoroutine(CutSceneTimer());
             isskill1 = true;
-            
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
             audioSource.PlayOneShot(VoiceOver);
-            Cutscenes.SetActive(true);
+            EffectSetactive.SetActive(true);
+            //Cutscenes.SetActive(true);
         }
 
         if (skillTimer > 0 && isskill1)

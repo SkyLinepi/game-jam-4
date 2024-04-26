@@ -41,10 +41,7 @@ public class Skill2 : MonoBehaviour
     void Unpause()
     {
         IsPausing = false; 
-        ParticleS2P1.active = true;
-        QuestionMark.active = true;
-        EffectSetactive.SetActive(true);
-        Cutscenes.SetActive(false);
+        //Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
@@ -82,8 +79,8 @@ public class Skill2 : MonoBehaviour
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateSkill();
-            StartCoroutine(CutSceneTimer());
-            Cutscenes.SetActive(true);
+            //StartCoroutine(CutSceneTimer());
+            //Cutscenes.SetActive(true);
         }
 
         if (skillTimer > 0 && PM.isskill2)
@@ -95,6 +92,8 @@ public class Skill2 : MonoBehaviour
             skillTimer = 0;
             PM.isskill2 = false;
             EffectSetactive.SetActive(false);
+            ParticleS2P1.active = false;
+            QuestionMark.active = false;
         }
     }
     
@@ -105,8 +104,11 @@ public class Skill2 : MonoBehaviour
         skillTimer = skillDuration;
         PM.isskill2 = true;
         cooldownTimer = cooldownTime; // Start cooldown timer
+        EffectSetactive.SetActive(true);
         audioSource.Stop();
         audioSource.PlayOneShot(VoiceOver);
+        ParticleS2P1.active = true;
+        QuestionMark.active = true;
     }
     IEnumerator CutSceneTimer()
     {

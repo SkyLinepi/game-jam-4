@@ -40,8 +40,7 @@ public class Skill2Player2 : MonoBehaviour
     void Unpause()
     {
         IsPausing = false;
-        EffectSetactive.SetActive(true);
-        Cutscenes.SetActive(false);
+        //Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
@@ -83,9 +82,9 @@ public class Skill2Player2 : MonoBehaviour
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
         {
             ActivateSkill();
-            StartCoroutine(CutSceneTimer());
+            //StartCoroutine(CutSceneTimer());
             audioSource.PlayOneShot(VoiceOver);
-            Cutscenes.SetActive(true);
+            //Cutscenes.SetActive(true);
         }
 
         Debug.Log("Distance =" + Distance);
@@ -97,7 +96,7 @@ public class Skill2Player2 : MonoBehaviour
         Debug.Log("Skill2_2");
         cascade.active = true;
         cascade.transform.position = transform.position;
-
+        EffectSetactive.SetActive(true);
         cooldownTimer = cooldownTime; // Start cooldown timer
     }
     IEnumerator CutSceneTimer()
