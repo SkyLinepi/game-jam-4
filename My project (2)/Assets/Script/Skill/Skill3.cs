@@ -27,6 +27,9 @@ public class Skill3 : MonoBehaviour
     [SerializeField] private float MaxFOV;
     private float t;
 
+    [SerializeField] AniManager AniM;
+    bool IsPausing = false;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,10 +37,32 @@ public class Skill3 : MonoBehaviour
         SkillAni.SetBool("isCooldown", false);
     }
 
+    void Pause()
+    {
+        IsPausing = true;
+    }
 
+    void Unpause()
+    {
+        IsPausing = false;
+        EffectSetactive.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
 
     void Update()
     {
+        if (IsPausing)
+            return;
         if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
@@ -54,6 +79,7 @@ public class Skill3 : MonoBehaviour
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Alpha3))
         {
+            StartCoroutine(CutSceneTimer());
             isskill3 = true;
             skillTimer = skillDuration;
             cooldownTimer = cooldownTime;
@@ -80,14 +106,11 @@ public class Skill3 : MonoBehaviour
         }
         
     }
-
-
     public void ActivateSkill()
     {
         
         Debug.Log("Skill3");
         Campivot.transform.Rotate(new Vector3(0, 0, RotationSpeed) * Time.deltaTime);
-        EffectSetactive.SetActive(true);
         Cam.GetComponent<Camera>().fieldOfView = Mathf.Lerp(MinFOV, MaxFOV, t);
         TCalculater();
     }
@@ -115,5 +138,11 @@ public class Skill3 : MonoBehaviour
             t = (360 - pivotZ) / 90;
         }
         Debug.Log("pivotZ value:" + pivotZ);
+    }
+    IEnumerator CutSceneTimer()
+    {
+        AniM.AniPlay();
+        yield return new WaitForSeconds(3);
+        AniM.AniFin();
     }
 }

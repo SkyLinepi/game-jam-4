@@ -19,17 +19,41 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerMove;
 
+    bool isPausing = false;
 
-
+    [SerializeField] private AniManager AniM;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+
+    void Pause()
+    {
+        isPausing = true;
+    }
+
+    void Unpause()
+    {
+        isPausing = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (isPausing)
+            return;
         if (isAI)
         {
             AIControl();

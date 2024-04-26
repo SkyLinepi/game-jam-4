@@ -10,7 +10,7 @@ public class cascadeMovement : MonoBehaviour
 
     private bool isPausing;
 
-    private void Start()
+    private void Awake()
     {
         AniM = FindAnyObjectByType<AniManager>();  
     }
