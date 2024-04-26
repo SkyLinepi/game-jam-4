@@ -243,6 +243,8 @@ MonoBehaviour:
   ballIsMoving: 0
   ScoreText1: {fileID: 719357738}
   ScoreText2: {fileID: 581206499}
+  scenePlayer1Win: 
+  scenePlayer2Win: 
 --- !u!4 &13343455
 Transform:
   m_ObjectHideFlags: 0
