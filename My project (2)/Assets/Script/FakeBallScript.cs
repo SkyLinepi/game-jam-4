@@ -12,6 +12,35 @@ public class FakeBallScript : MonoBehaviour
 
     private Rigidbody2D rb2;
 
+    private AniManager AniM;
+
+    private Vector2 CurretVel;
+
+    private void Awake()
+    {
+        AniM = FindAnyObjectByType<AniManager>();
+    }
+    private void OnEnable()
+    {
+        AniM.onAniPlayed += Pause;
+        AniM.onAniFinished += Unpause;
+    }
+
+    private void OnDisable()
+    {
+        AniM.onAniPlayed -= Pause;
+        AniM.onAniFinished -= Unpause;
+    }
+    void Pause()
+    {
+        CurretVel = this.rb2.velocity;
+        rb2.velocity = Vector2.zero;
+    }
+
+    void Unpause()
+    {
+        rb2.velocity = CurretVel;
+    }
 
     // Start is called before the first frame update
     void Start()

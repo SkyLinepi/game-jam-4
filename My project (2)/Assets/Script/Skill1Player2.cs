@@ -22,10 +22,16 @@ public class Skill1Player2 : MonoBehaviour
     public GameObject EffectSetactive;
     private AudioSource audioSource;
 
+    bool InArea = false;
+    [SerializeField] Transform Player2;
+
+    [SerializeField] float AvaiableSkillArea;
+
 
     void Start()
     {
         CanUseSkill1 = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     
@@ -52,9 +58,12 @@ public class Skill1Player2 : MonoBehaviour
                 OffsetY = Vector3.down;
             }
             SpawnTarget.position += OffsetY * WallOffset;
+
+            InArea = Mathf.Abs(BallTarget.position.y - Player2.position.y) <= AvaiableSkillArea;
+            
         }
 
-        if(CanUseSkill1 && Input.GetKeyDown(KeyCode.I))
+        if(CanUseSkill1 && Input.GetKeyDown(KeyCode.I) && InArea)
         {
             Debug.Log("Press I");
             WallSpawn();
@@ -79,7 +88,7 @@ public class Skill1Player2 : MonoBehaviour
     void WallSpawn()
     {
         Debug.Log("WallSpawn");
-        GameObject SpawnedWall = Instantiate(Wall, SpawnTarget.position, Quaternion.identity);
+        GameObject SpawnedWall = Instantiate(Wall, SpawnTarget.position, QuaternionCal());
         Destroy(SpawnedWall, WallDuration);
     }
 
@@ -94,5 +103,17 @@ public class Skill1Player2 : MonoBehaviour
         isFollowing = false;
     }
 
-
+    Quaternion QuaternionCal()
+    {
+        Vector2 BallDir = BallPosition.gameObject.GetComponent<Rigidbody2D>().velocity;
+        if(BallDir.y < 0)
+        {
+            return Quaternion.identity;
+        }
+        BallDir = BallDir.normalized;
+        Vector2 Dir = BallDir - Vector2.up;
+        float AngleInRad = Mathf.Atan2(Dir.y, Dir.x);
+        Quaternion RotationToApply = Quaternion.Euler(0,0,AngleInRad * Mathf.Rad2Deg);
+        return RotationToApply;
+    }
 }
