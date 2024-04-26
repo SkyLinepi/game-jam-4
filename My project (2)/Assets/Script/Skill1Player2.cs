@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill1Player2 : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class Skill1Player2 : MonoBehaviour
     [SerializeField] private float cooldownTime = 5f;
     [SerializeField] private bool CanUseSkill1 = true;
 
+    [SerializeField] Image SkillBox;
+    [SerializeField] Image SkillIcon;
+    [SerializeField] private Animator SkillAni;
+
     public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
@@ -32,6 +37,7 @@ public class Skill1Player2 : MonoBehaviour
     {
         CanUseSkill1 = true;
         audioSource = GetComponent<AudioSource>();
+        SkillAni.SetBool("isCooldown", false);
     }
 
     
@@ -76,12 +82,18 @@ public class Skill1Player2 : MonoBehaviour
     {
         if (cooldownTimer > 0)
         {
-            cooldownTimer -= Time.deltaTime;
+            cooldownTimer -= Time.deltaTime; 
+            SkillBox.color = Color.gray;
+            SkillAni.SetBool("isCooldown", true);
+            SkillIcon.color = Color.gray;
         }
         else if(!CanUseSkill1)
         {
             cooldownTimer = 0;
             CanUseSkill1 = true;
+            SkillBox.color = Color.white;
+            SkillAni.SetBool("isCooldown", false);
+            SkillIcon.color = Color.white;
         }
     }
 

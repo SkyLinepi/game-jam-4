@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill2Player2 : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class Skill2Player2 : MonoBehaviour
     public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
+
+    [SerializeField] Image SkillBox;
+    [SerializeField] Image SkillIcon;
+    [SerializeField] private Animator SkillAni;
 
     void Start()
     {
@@ -34,11 +39,24 @@ public class Skill2Player2 : MonoBehaviour
         {
             cascade.active = false;
         }
+        
+        if(cooldownTimer > 0)
+        {
+            SkillBox.color = Color.gray;
+            SkillAni.SetBool("isCooldown", true);
+            SkillIcon.color = Color.gray;
+        }
+        else if(cooldownTimer <= 0)
+        {
+            SkillBox.color = Color.white;
+            SkillAni.SetBool("isCooldown", false);
+            SkillIcon.color = Color.white;
+        }
 
         if (cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.O))
         {
             ActivateSkill();
-            audioSource.PlayOneShot(VoiceOver);    
+            audioSource.PlayOneShot(VoiceOver);
         }
 
         Debug.Log("Distance =" + Distance);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill3Player2 : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Skill3Player2 : MonoBehaviour
     public AudioClip VoiceOver;
     public GameObject EffectSetactive;
     private AudioSource audioSource;
+
+    [SerializeField] Image SkillBox;
+    [SerializeField] Image SkillIcon;
+    [SerializeField] private Animator SkillAni;
 
     void Start()
     {
@@ -45,9 +50,15 @@ public class Skill3Player2 : MonoBehaviour
         if (isOnCooldown)
         {
             cooldownTimer -= Time.deltaTime;
+            SkillBox.color = Color.gray;
+            SkillAni.SetBool("isCooldown", true);
+            SkillIcon.color = Color.gray;
             if (cooldownTimer <= 0)
             {
                 isOnCooldown = false;
+                SkillBox.color = Color.white;
+                SkillAni.SetBool("isCooldown", false);
+                SkillIcon.color = Color.white;
             }
         }
     }
