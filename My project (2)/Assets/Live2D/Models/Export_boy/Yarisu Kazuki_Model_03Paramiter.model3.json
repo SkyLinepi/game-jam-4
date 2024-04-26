@@ -1,0 +1,26 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Yarisu Kazuki_Model_03Paramiter.moc3",
+		"Textures": [
+			"Yarisu Kazuki_Model_03Paramiter.2048/texture_00.png",
+			"Yarisu Kazuki_Model_03Paramiter.2048/texture_01.png",
+			"Yarisu Kazuki_Model_03Paramiter.2048/texture_02.png",
+			"Yarisu Kazuki_Model_03Paramiter.2048/texture_03.png",
+			"Yarisu Kazuki_Model_03Paramiter.2048/texture_04.png"
+		],
+		"DisplayInfo": "Yarisu Kazuki_Model_03Paramiter.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

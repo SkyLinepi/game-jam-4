@@ -1,0 +1,611 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParaLovely1_Opacity",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely1_Opacity"
+		},
+		{
+			"Id": "ParamLovely1_Scale",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely1_Scale"
+		},
+		{
+			"Id": "ParamLovely1_Remove",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely1_Remove"
+		},
+		{
+			"Id": "ParamLovely2_Opacity",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely2_Opacity"
+		},
+		{
+			"Id": "ParamLovely2_Scale",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely2_Scale"
+		},
+		{
+			"Id": "ParamLovely2_Remove",
+			"GroupId": "ParamGroup15",
+			"Name": "Lovely2_Remove"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "Angle  Y"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "ParamGroup12",
+			"Name": "R Arm Rotation"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "ParamGroup12",
+			"Name": "L Arm Rotation"
+		},
+		{
+			"Id": "Param5AreA",
+			"GroupId": "ParamGroup12",
+			"Name": "AreA"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeL Smile"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeR Open"
+		},
+		{
+			"Id": "ParamEyeRSlime",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeRSlime"
+		},
+		{
+			"Id": "ParamEyeballX",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeballX"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup2",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth Sad"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "ParamGroup4",
+			"Name": "Cheek Puff"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "ParamGroup4",
+			"Name": "Mouth X"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "ParamGroup6",
+			"Name": "X 1 [Hair]"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "ParamGroup11",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "ParamGroup11",
+			"Name": "Ears"
+		},
+		{
+			"Id": "AA",
+			"GroupId": "",
+			"Name": "AA"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup15",
+			"GroupId": "",
+			"Name": "Love Iconn"
+		},
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "[ - INPUTS - ]"
+		},
+		{
+			"Id": "ParamGroup12",
+			"GroupId": "",
+			"Name": "[ - ARMS - ]"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "[ - EYES - ]"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "[ - MOUTH - ]"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "[ - HAIR - ]"
+		},
+		{
+			"Id": "ParamGroup11",
+			"GroupId": "",
+			"Name": "[ - MISC - ]"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Character",
+			"Name": "Character"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ Guide Image]"
+		},
+		{
+			"Id": "Emotion",
+			"Name": "Emotion"
+		},
+		{
+			"Id": "Accessories",
+			"Name": "Accessories"
+		},
+		{
+			"Id": "Bunny",
+			"Name": "Bunny"
+		},
+		{
+			"Id": "Part",
+			"Name": "Front Hair"
+		},
+		{
+			"Id": "EBR",
+			"Name": "EBR"
+		},
+		{
+			"Id": "Mouth",
+			"Name": "Mouth"
+		},
+		{
+			"Id": "Face",
+			"Name": "Face"
+		},
+		{
+			"Id": "Lowerpart",
+			"Name": "Lower part"
+		},
+		{
+			"Id": "Backhair",
+			"Name": "Backhair"
+		},
+		{
+			"Id": "Part9",
+			"Name": "LovelyIcon"
+		},
+		{
+			"Id": "Angry",
+			"Name": "Angry"
+		},
+		{
+			"Id": "Clipping",
+			"Name": "Clipping"
+		},
+		{
+			"Id": "Rong",
+			"Name": "Rong"
+		},
+		{
+			"Id": "Chain",
+			"Name": "Chain"
+		},
+		{
+			"Id": "bowL",
+			"Name": "bow tie L"
+		},
+		{
+			"Id": "bowR",
+			"Name": "bow tie R"
+		},
+		{
+			"Id": "fM",
+			"Name": "fh-M"
+		},
+		{
+			"Id": "fR",
+			"Name": "fh-R"
+		},
+		{
+			"Id": "fL",
+			"Name": "fh-L"
+		},
+		{
+			"Id": "fL2",
+			"Name": "fh-L2"
+		},
+		{
+			"Id": "fR2",
+			"Name": "fh-R2"
+		},
+		{
+			"Id": "fR31",
+			"Name": "fh-R3.1"
+		},
+		{
+			"Id": "fR32",
+			"Name": "fh-R3.2"
+		},
+		{
+			"Id": "fR3",
+			"Name": "fh-R3"
+		},
+		{
+			"Id": "fL41",
+			"Name": "fh-L4.1"
+		},
+		{
+			"Id": "fL42",
+			"Name": "fh-L4.2"
+		},
+		{
+			"Id": "fL4",
+			"Name": "fh-L4"
+		},
+		{
+			"Id": "b",
+			"Name": "bh"
+		},
+		{
+			"Id": "EyeL",
+			"Name": "EyeL"
+		},
+		{
+			"Id": "EyeR",
+			"Name": "EyeR"
+		},
+		{
+			"Id": "Mup",
+			"Name": "M-Up"
+		},
+		{
+			"Id": "Mdown",
+			"Name": "M-Down"
+		},
+		{
+			"Id": "Mm",
+			"Name": "M-M"
+		},
+		{
+			"Id": "Cheek",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "FaeM",
+			"Name": "Face-M"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Clothes"
+		},
+		{
+			"Id": "Arm1",
+			"Name": "Arm1"
+		},
+		{
+			"Id": "Body",
+			"Name": "Body"
+		},
+		{
+			"Id": "FhL",
+			"Name": "Fh-B-L"
+		},
+		{
+			"Id": "FhR",
+			"Name": "Fh-B-R"
+		},
+		{
+			"Id": "FhM",
+			"Name": "Fh-B-M"
+		},
+		{
+			"Id": "angry1",
+			"Name": "Angry1"
+		},
+		{
+			"Id": "angry2",
+			"Name": "Angry2"
+		},
+		{
+			"Id": "star",
+			"Name": "Star"
+		},
+		{
+			"Id": "clip",
+			"Name": "Clip"
+		},
+		{
+			"Id": "rongL",
+			"Name": "RongL"
+		},
+		{
+			"Id": "rongR",
+			"Name": "RongR"
+		},
+		{
+			"Id": "chain1L",
+			"Name": "Chain1L"
+		},
+		{
+			"Id": "chain2L",
+			"Name": "Chain2L"
+		},
+		{
+			"Id": "EyelashupL",
+			"Name": "Eyelash-Up-L"
+		},
+		{
+			"Id": "EyelashdownL",
+			"Name": "Eyelash-down-L"
+		},
+		{
+			"Id": "EyL1",
+			"Name": "Eye-L1"
+		},
+		{
+			"Id": "EyL2",
+			"Name": "Eye-L2"
+		},
+		{
+			"Id": "EyelashR",
+			"Name": "EyelashR"
+		},
+		{
+			"Id": "EyelshdownR",
+			"Name": "Eyelash-down-R"
+		},
+		{
+			"Id": "EyeR1",
+			"Name": "Eye-R1"
+		},
+		{
+			"Id": "EyeR2",
+			"Name": "Eye-R2"
+		},
+		{
+			"Id": "SyR",
+			"Name": "Shy-R"
+		},
+		{
+			"Id": "SyL",
+			"Name": "Shy-L"
+		},
+		{
+			"Id": "ChekR",
+			"Name": "Cheek-R"
+		},
+		{
+			"Id": "ChekL",
+			"Name": "Cheek-L"
+		},
+		{
+			"Id": "Ears",
+			"Name": "Ears"
+		},
+		{
+			"Id": "ribbon1",
+			"Name": "Ribbon"
+		},
+		{
+			"Id": "shirtM",
+			"Name": "Shirt-M"
+		},
+		{
+			"Id": "beltM",
+			"Name": "Belt-M"
+		},
+		{
+			"Id": "skirt",
+			"Name": "Skirt"
+		},
+		{
+			"Id": "arm2",
+			"Name": "Arm2"
+		},
+		{
+			"Id": "WristbandL",
+			"Name": "Wristband-L"
+		},
+		{
+			"Id": "ArmbanL",
+			"Name": "Armband-L"
+		},
+		{
+			"Id": "ShrmL",
+			"Name": "Sh-arm-L"
+		},
+		{
+			"Id": "SR",
+			"Name": "Sh-R"
+		},
+		{
+			"Id": "SL",
+			"Name": "Sh-L"
+		},
+		{
+			"Id": "hanR",
+			"Name": "hand-R"
+		},
+		{
+			"Id": "hanL",
+			"Name": "hand-L"
+		},
+		{
+			"Id": "body2",
+			"Name": "Body2"
+		},
+		{
+			"Id": "EyelashL1",
+			"Name": "EyelashL1"
+		},
+		{
+			"Id": "EyelahL11",
+			"Name": "Eyelash-L1.1"
+		},
+		{
+			"Id": "EyelshL12",
+			"Name": "Eyelash-L1.2"
+		},
+		{
+			"Id": "EyelshR11",
+			"Name": "Eyelash-R1.1"
+		},
+		{
+			"Id": "EyelshR12",
+			"Name": "Eyelash-R1.2"
+		},
+		{
+			"Id": "EyelshR1",
+			"Name": "Eyelash-R1"
+		},
+		{
+			"Id": "EarLR",
+			"Name": "Ear_LR"
+		},
+		{
+			"Id": "Ear_R",
+			"Name": "Ear_R"
+		},
+		{
+			"Id": "Ribbon2",
+			"Name": "Ribbon2"
+		},
+		{
+			"Id": "Ribbon1",
+			"Name": "Ribbon1"
+		},
+		{
+			"Id": "skrt",
+			"Name": "Skirt"
+		},
+		{
+			"Id": "skirtR",
+			"Name": "Skirt-R"
+		},
+		{
+			"Id": "SkirtL",
+			"Name": "Skirt-L"
+		},
+		{
+			"Id": "skirtM",
+			"Name": "Skirt-M"
+		},
+		{
+			"Id": "WristbanR",
+			"Name": "Wristband-R"
+		},
+		{
+			"Id": "ArmbanR",
+			"Name": "Armband-R"
+		},
+		{
+			"Id": "SharR",
+			"Name": "Sh-arm-R"
+		},
+		{
+			"Id": "EarL",
+			"Name": "Ear_L"
+		},
+		{
+			"Id": "RibbonL",
+			"Name": "RibbonL"
+		},
+		{
+			"Id": "ColarL",
+			"Name": "Collar-L"
+		},
+		{
+			"Id": "Part2",
+			"Name": "RibbonL"
+		},
+		{
+			"Id": "RibbonR",
+			"Name": "RibbonR"
+		},
+		{
+			"Id": "ColarR",
+			"Name": "Collar-R"
+		},
+		{
+			"Id": "RibonR",
+			"Name": "RibbonR"
+		},
+		{
+			"Id": "RibonL1",
+			"Name": "Ribbon-L1"
+		},
+		{
+			"Id": "RibonL2",
+			"Name": "Ribbon-L2"
+		},
+		{
+			"Id": "RribonML",
+			"Name": "Rribbon-M-L"
+		},
+		{
+			"Id": "RibonL3",
+			"Name": "Ribbon-L3"
+		},
+		{
+			"Id": "RibonR1",
+			"Name": "Ribbon-R1"
+		},
+		{
+			"Id": "RibonR2",
+			"Name": "Ribbon-R2"
+		},
+		{
+			"Id": "RibonMR",
+			"Name": "Ribbon-M-R"
+		},
+		{
+			"Id": "RibonR3",
+			"Name": "Ribbon-R3"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamEyeballX",
+			"ParamEyeBallY"
+		]
+	]
+}

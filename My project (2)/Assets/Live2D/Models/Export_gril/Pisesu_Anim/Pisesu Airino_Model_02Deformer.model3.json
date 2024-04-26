@@ -1,0 +1,29 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Pisesu Airino_Model_02Deformer.moc3",
+		"Textures": [
+			"Pisesu Airino_Model_02Deformer.1024/texture_00.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_01.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_02.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_03.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_04.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_05.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_06.png",
+			"Pisesu Airino_Model_02Deformer.1024/texture_07.png"
+		],
+		"DisplayInfo": "Pisesu Airino_Model_02Deformer.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}
