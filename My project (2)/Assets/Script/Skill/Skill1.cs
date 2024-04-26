@@ -16,6 +16,7 @@ public class Skill1 : MonoBehaviour
     public GameObject EffectSetactive;
     private AudioSource audioSource;
     [SerializeField] private AudioClip VoiceOver;
+    [SerializeField] private AudioClip Spawn;
 
     [SerializeField] private Image SkillBox;
     [SerializeField] private Animator SkillAni;
@@ -107,6 +108,7 @@ public class Skill1 : MonoBehaviour
         Debug.Log("Skill1");
         Debug.Log("Fake Ball skill1");
         Instantiate(FakeBall, FakeSpawn, Quaternion.identity);
+        audioSource.PlayOneShot(Spawn);
         particleS1P1.active = true;
     }
 
