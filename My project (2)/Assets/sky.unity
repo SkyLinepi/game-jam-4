@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 4
   skillDuration: 2
-  VoiceOver: {fileID: 8300000, guid: 0625a8d3680c32549a5b21731b50fc56, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 8c39f99ed03ad7444ac4a79103ce6fc4, type: 3}
   EffectSetactive: {fileID: 1507054726}
   PM: {fileID: 1014428892}
   target: {fileID: 1014428887}
@@ -679,7 +679,7 @@ MonoBehaviour:
   SkillBox: {fileID: 1182220455}
   SkillAni: {fileID: 1182220457}
   SkillIcon: {fileID: 1941997416}
-  VoiceOver: {fileID: 8300000, guid: 5211420c95f566a4084d85f762b29563, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 2011dd9ddc8acae4596f69ba0ec8ae90, type: 3}
   EffectSetactive: {fileID: 1006475291}
   MinFOV: 41.3
   MaxFOV: 63.5
@@ -703,8 +703,7 @@ MonoBehaviour:
   FakeBall: {fileID: 5957711441813201215, guid: d0fbbc10d4e32124a86512b32b2241bf, type: 3}
   FakeLocation: {fileID: 1264203352}
   EffectSetactive: {fileID: 322149251}
-  VoiceOver: {fileID: 8300000, guid: 65897f5fbecc40c4dad5ce0daacdc783, type: 3}
-  Spawn: {fileID: 8300000, guid: 58015bea0396ee6468c25e8a22eb25b6, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 5bbdd5984af4e6849be530adf60db79b, type: 3}
   SkillBox: {fileID: 370094889}
   SkillAni: {fileID: 370094891}
   SkillIcon: {fileID: 1339630743}
@@ -723,7 +722,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8053,7 +8052,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cooldownDuration: 20
   cooldownTimer: 0
-  VoiceOver: {fileID: 8300000, guid: 84b1d478a3657cd4a9e6804668d6230e, type: 3}
+  VoiceOver: {fileID: 8300000, guid: db11e738c278d25439376a58d855098a, type: 3}
   EffectSetactive: {fileID: 2001063390}
   SkillBox: {fileID: 996123662}
   SkillIcon: {fileID: 1024175822}
@@ -8074,7 +8073,7 @@ MonoBehaviour:
   cooldownTime: 1
   cascade: {fileID: 630071366}
   Destination: {x: 0, y: -1}
-  VoiceOver: {fileID: 8300000, guid: 9580aab3e1a16044ca9751a34b04bbd3, type: 3}
+  VoiceOver: {fileID: 8300000, guid: bb9c7d0ec3a410543b8560346d408751, type: 3}
   EffectSetactive: {fileID: 592780087}
   SkillBox: {fileID: 1618112712}
   SkillIcon: {fileID: 918659750}
@@ -8104,7 +8103,7 @@ MonoBehaviour:
   SkillBox: {fileID: 518667279}
   SkillIcon: {fileID: 543411765}
   SkillAni: {fileID: 518667278}
-  VoiceOver: {fileID: 8300000, guid: 7292e2a45e7c935419316463ee553664, type: 3}
+  VoiceOver: {fileID: 8300000, guid: 330998c97604b4143812d8ee2433402e, type: 3}
   EffectSetactive: {fileID: 592780087}
   Player2: {fileID: 1014428890}
   AvaiableSkillArea: 10
@@ -8121,7 +8120,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
