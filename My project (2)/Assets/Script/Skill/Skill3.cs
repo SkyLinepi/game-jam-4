@@ -29,6 +29,7 @@ public class Skill3 : MonoBehaviour
 
     [SerializeField] AniManager AniM;
     bool IsPausing = false;
+    public GameObject Cutscenes;
 
     void Start()
     {
@@ -40,12 +41,14 @@ public class Skill3 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
+        Cutscenes.SetActive(true);
     }
 
     void Unpause()
     {
         IsPausing = false;
         EffectSetactive.SetActive(true);
+        Cutscenes.SetActive(false);
     }
 
     private void OnEnable()

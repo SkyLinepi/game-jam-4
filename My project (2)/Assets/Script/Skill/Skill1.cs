@@ -22,6 +22,8 @@ public class Skill1 : MonoBehaviour
     [SerializeField] private Animator SkillAni;
     [SerializeField] private Image SkillIcon;
 
+    public GameObject Cutscenes;
+
     bool IsPausing = false;
 
     [SerializeField] private bool isskill1 = false;
@@ -38,12 +40,14 @@ public class Skill1 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
+        Cutscenes.SetActive(true);
     }
 
     void Unpause()
     {
         EffectSetactive.SetActive(true);
         IsPausing = false;
+        Cutscenes.SetActive(false);
     }
 
     private void OnEnable()

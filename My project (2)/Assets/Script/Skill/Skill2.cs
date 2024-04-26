@@ -24,6 +24,8 @@ public class Skill2 : MonoBehaviour
     [SerializeField] AniManager AniM;
     bool IsPausing = false;
 
+    public GameObject Cutscenes;
+
     void Start()
     {
         PM = target.GetComponent<Player2>();
@@ -34,6 +36,7 @@ public class Skill2 : MonoBehaviour
     void Pause()
     {
         IsPausing = true;
+        Cutscenes.SetActive(true);
     }
 
     void Unpause()
@@ -42,6 +45,7 @@ public class Skill2 : MonoBehaviour
         ParticleS2P1.active = true;
         QuestionMark.active = true;
         EffectSetactive.SetActive(true);
+        Cutscenes.SetActive(false);
     }
 
     private void OnEnable()
