@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "CutSence01.moc3",
+		"Textures": [
+			"CutSence01.4096/texture_00.png",
+			"CutSence01.4096/texture_01.png"
+		],
+		"DisplayInfo": "CutSence01.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}
