@@ -39,7 +39,11 @@ public class SetScore : MonoBehaviour
         GetScoreP2 = false;
         Player1Win = false;
         Player2Win = false;
+        scoreP1 = 0;
+        scoreP2 = 0;
     }
+
+    
 
     void Update()
     {
